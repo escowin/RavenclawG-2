@@ -16,16 +16,36 @@
   </head>
   <body>
     <div class="container">
-      <div class="settings row hidden" id="settings">
-        <div class="two columns" id="name-settings">Name</div>
-        <div class="two columns" id="background-settings">background</div>
-        <div class="two columns" id="weather-settings">weather</div>
-        <div class="two columns" id="sports-settings">sports</div>
-        <div class="two columns" id="finance-settings">finance</div>
-        <div class="two columns" id="news-settings">news</div>
+      <div class="settings hidden rounded" id="settings">
+        <div class="row">
+          <div class="four columns" id="name-settings">
+            <form id="user-name-form" class="" name="username" method="POST">
+              <div class="">
+                <label for="user-name">First Name</label>
+                <input
+                  type="text"
+                  name="user-name"
+                  id="user-name"
+                  placeholder="Your First Name"
+                />
+              </div>
+            </form>
+            <p class="hidden name-verify" id="name-verify">
+              *Please Input Username*
+            </p>
+          </div>
+          <div class="four columns" id="background-settings">background</div>
+          <div class="four columns" id="weather-settings">weather</div>
+        </div>
+        <div class="row">
+          <div class="four columns" id="sports-settings">sports</div>
+          <div class="four columns" id="finance-settings">finance</div>
+          <div class="four columns" id="news-settings">news</div>
+        </div>
+        <button id="update-btn" class="btn">UPDATE</button>
       </div>
       <div class="row">
-        <div class="dark rounded" id="welcome">Welcome</div>
+        <div class="dark rounded center welcome" id="welcome"></div>
       </div>
       <div class="row">
         <div class="dark rounded" id="weather">Weather</div>
@@ -41,7 +61,8 @@
         <div class="dark center rounded" id="credits">
           <p class="imageDetails center">
             Background by <a id="creator" href="#">NAME</a> on
-            <a href="https://www.unsplash.com">Unsplash</a>!
+            <a href="https://www.unsplash.com">Unsplash</a>!<br />
+            <a href="#" id="update-settings">UPDATE SETTINGS</a>
           </p>
         </div>
       </div>
