@@ -30,10 +30,6 @@ fetch(endpoint)
   .then(function () {
     document.body.style.backgroundImage = "url('" + randomImage + "')";
     document.body.style.backgroundSize = "cover";
-<<<<<<< HEAD
-
-  });
-=======
     document.body.style.backgroundRepeat = "no-repeat";
   });
 
@@ -132,4 +128,3 @@ settings();
 setTime();
 updateBtnEl.addEventListener("click", updateClicked);
 updateSettingsEl.addEventListener("click", showSettings);
->>>>>>> develop
