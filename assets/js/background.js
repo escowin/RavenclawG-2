@@ -2,16 +2,6 @@ let clientID = "T55TOxKxDJMpz91j6fEuSi-nPDhq1TpFAFtB91u4X9o";
 let endpoint = ``;
 let randomImage = "";
 let creatorEl = document.querySelector("#creator");
-<<<<<<< HEAD
-// document.body.style.backgroundImage = "url('" + randomImage + "')";
-// document.body.style.backgroundSize = "cover";
-viewMode = function () {
-    if (window.innerHeight > window.innerWidth){
-        endpoint = `https://api.unsplash.com/photos/random/?orientation=portrait&client_id=${clientID}`
-    }else{
-        endpoint = `https://api.unsplash.com/photos/random/?orientation=landscape&client_id=${clientID}`
-    }
-=======
 let settingsEl = document.querySelector("#settings");
 let userNameEl = document.querySelector("#user-name");
 let updateBtnEl = document.querySelector("#update-btn");
@@ -25,7 +15,6 @@ viewMode = function () {
   } else {
     endpoint = `https://api.unsplash.com/photos/random/?orientation=landscape&collections=136095&client_id=${clientID}`;
   }
->>>>>>> develop
 };
 viewMode();
 fetch(endpoint)
