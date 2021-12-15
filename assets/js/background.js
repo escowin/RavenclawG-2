@@ -2,6 +2,7 @@ let clientID = "T55TOxKxDJMpz91j6fEuSi-nPDhq1TpFAFtB91u4X9o";
 let endpoint = ``;
 let randomImage = "";
 let creatorEl = document.querySelector("#creator");
+let settingsEl = document.querySelector("#settings");
 // document.body.style.backgroundImage = "url('" + randomImage + "')";
 // document.body.style.backgroundSize = "cover";
 viewMode = function () {
@@ -28,3 +29,14 @@ fetch(endpoint)
     document.body.style.backgroundRepeat = "no-repeat";
 
   });
+
+let settings = function(){
+    if (localStorage.getItem("username") === null){
+        settingsEl.classList.remove("hidden");
+    }
+}
+
+
+
+
+settings();
