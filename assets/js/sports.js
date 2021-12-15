@@ -2,10 +2,14 @@
 var apiUrl = "https://www.balldontlie.io/api/v1/players?search=" 
 var searchEl = document.querySelector('#playerSearch');
 var buttonEl = document.querySelector('#city-form');
+var dataEl = document.querySelector('#data');
 
 fetch(apiUrl)
 .then(response => response.json())
-.then(data => console.log(data))
+.then(data => {
+    for (i = 0; i > data.length; i++)
+    console.log(data)
+})
 
 var playerSumbitHandler = function(event) {
     // prevent page from refreshing 
@@ -27,7 +31,9 @@ var getPlayer = function() {
     // fetch the api
     fetch(apiUrl)
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => {
+        dataEl.innerHTML = data.data
+    })
 };
 
 buttonEl.addEventListener("submit", playerSumbitHandler);
