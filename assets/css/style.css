@@ -47,7 +47,23 @@ body {
 .row {
     margin: 20px;
 }
-
+.name-verify {
+    color: #ff0000;
+    font-weight: bold;
+}
+.welcome h1{
+    line-height: 10px;
+}
+.btn {
+    background-color: #666666;
+    color: #000000;
+    border: 1px solid black;
+}
+.btn:hover {
+    background-color: #999999;
+    color: #ffffff;
+    border; 1px solid #ff0000;
+}
 
 /*mobile setup*/
 @media only screen and (max-width: 960px) {
