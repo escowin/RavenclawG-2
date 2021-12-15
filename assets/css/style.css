@@ -3,21 +3,12 @@ body {
     height: 100vh;
     width: 100vw;
 }
-<<<<<<< HEAD
-main {
-    display: flex;
-    min-height: 100vh;
-    width: 100vw;
-    align-items: center;
-    justify-content: center;
-=======
 .container {
     /* display: flex;
     min-height: 100vh;
     width: 100vw;
     align-items: center;
     justify-content: center; */
->>>>>>> develop
 }
 .light {
     background-color: rgba(255, 255, 255, 0.6);
@@ -45,9 +36,6 @@ main {
     border-radius: 10px;
     padding: 10px;
 }
-<<<<<<< HEAD
-
-=======
 .hidden {
     display: none;
 }
@@ -74,9 +62,8 @@ main {
 .btn:hover {
     background-color: #999999;
     color: #ffffff;
-    border; 1px solid #ff0000;
+    border: 1px solid #ff0000;
 }
->>>>>>> develop
 
 /*mobile setup*/
 @media only screen and (max-width: 960px) {

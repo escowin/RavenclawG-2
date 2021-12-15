@@ -1,21 +1,15 @@
 // gets all the players
 var apiUrl = "https://www.balldontlie.io/api/v1/players?search=" 
-var searchEl = document.querySelector('#playerSearch');
-var buttonEl = document.querySelector('#city-form');
-var dataEl = document.querySelector('#data');
+var searchEl = document.querySelector('#searchNBA');
+var buttonEl = document.querySelector('#update-btn');
+var dataEl = document.querySelector('#nbaPlayer');
 
-fetch(apiUrl)
-.then(response => response.json())
-.then(data => {
-    for (i = 0; i > data.length; i++)
-    console.log(data)
-})
 
 var playerSumbitHandler = function(event) {
     // prevent page from refreshing 
     event.preventDefault();
     // get the value from the input
-    var playerSearch = searchEl.value.trim();
+    var playerSearch = searchEl.value;
 
     if(playerSearch) {
         getPlayer(playerSearch);
@@ -31,9 +25,9 @@ var getPlayer = function() {
     // fetch the api
     fetch(apiUrl)
     .then(response => response.json())
-    .then(data => {
-        dataEl.innerHTML = data.data
-    })
-};
+    .then(data => console.log(data));
 
-buttonEl.addEventListener("submit", playerSumbitHandler);
+}
+
+
+buttonEl.addEventListener("update", playerSumbitHandler)
