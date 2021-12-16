@@ -17,24 +17,48 @@ let financeEl = document.querySelector("#finance");
 let newsEl = document.querySelector("#news");
 let creditsEl = document.querySelector("#credits");
 let navEl = document.querySelector("#nav");
-let colorArray = [welcomeEl, weatherEl, sportsEl, financeEl, newsEl, creditsEl, navEl];
+let colorArray = [
+  welcomeEl,
+  weatherEl,
+  sportsEl,
+  financeEl,
+  newsEl,
+  creditsEl,
+  navEl,
+];
 let mainEl = document.querySelector("#main");
 let darkVerifyEl = document.querySelector("#dark-verify");
-let dark = true;
-let setDark = function(){
-    for(i=0; i < colorArray.length; i++){
-        colorArray[i].classList.remove("light")
-        colorArray[i].classList.add("dark");
-        dark = true;
-    }
-}
-let setLight = function(){
-    for(i=0; i < colorArray.length; i++){
-        colorArray[i].classList.remove("dark")
-        colorArray[i].classList.add("light");
-        dark = false;
-}
-}
+let dark = "";
+let weatherIconEl = document.querySelector("#weather-icon");
+let sportsIconEl = document.querySelector("#sports-icon");
+let financeIconEl = document.querySelector("#finance-icon");
+let newsIconEl = document.querySelector("#news-icon");
+let iconArray = [weatherIconEl, sportsIconEl, financeIconEl, newsIconEl];
+
+let setDark = function () {
+  for (i = 0; i < colorArray.length; i++) {
+    colorArray[i].classList.remove("light");
+    colorArray[i].classList.add("dark");
+  }
+  for (i = 0; i < iconArray.length; i++) {
+    iconArray[i].classList.remove("light-txt");
+    iconArray[i].classList.add("dark-txt");
+  }
+  dark = true;
+  localStorage.setItem("mode", "dark");
+};
+let setLight = function () {
+  for (i = 0; i < colorArray.length; i++) {
+    colorArray[i].classList.remove("dark");
+    colorArray[i].classList.add("light");
+  }
+  for (i = 0; i < iconArray.length; i++) {
+    iconArray[i].classList.remove("dark-txt");
+    iconArray[i].classList.add("light-txt");
+  }
+  dark = false;
+  localStorage.setItem("mode", "light");
+};
 
 viewMode = function () {
   if (window.innerHeight > window.innerWidth) {
@@ -52,11 +76,11 @@ fetch(endpoint)
     console.log(jsonData);
     randomImage = jsonData.urls.full;
     creatorEl.innerText = jsonData.user.name;
-    if(jsonData.user.portfolio_url !== null){
-        creatorEl.setAttribute("href", jsonData.user.portfolio_url);}
-        else{
-            creatorEl.setAttribute("href", unsplashLink);
-        }
+    if (jsonData.user.portfolio_url !== null) {
+      creatorEl.setAttribute("href", jsonData.user.portfolio_url);
+    } else {
+      creatorEl.setAttribute("href", unsplashLink);
+    }
   })
   .then(function () {
     document.body.style.backgroundImage = "url('" + randomImage + "')";
@@ -67,8 +91,9 @@ fetch(endpoint)
 let settings = function () {
   if (localStorage.getItem("userName") === null) {
     settingsEl.classList.remove("hidden");
-  }else{
-      mainEl.classList.remove("hidden");
+  } else {
+    mainEl.classList.remove("hidden");
+    setMode();
   }
 };
 let updateClicked = function (event) {
@@ -86,23 +111,22 @@ let updateClicked = function (event) {
     nameVerifyEl.classList.add("hidden");
     fail1 = false;
   }
-  if (darkRadBtnEl.checked === true){
-      setDark();
-      fail2 = false;
-      darkVerifyEl.classList.add("hidden");
-  }else if (lightRadBtnEl.checked === true){
-      setLight();
-      fail2 = false;
-      darkVerifyEl.classList.add("hidden");
-  }else{
-      darkVerifyEl.classList.remove("hidden");
-      fail2 = true;
+  if (darkRadBtnEl.checked === true) {
+    setDark();
+    fail2 = false;
+    darkVerifyEl.classList.add("hidden");
+  } else if (lightRadBtnEl.checked === true) {
+    setLight();
+    fail2 = false;
+    darkVerifyEl.classList.add("hidden");
+  } else {
+    darkVerifyEl.classList.remove("hidden");
+    fail2 = true;
   }
 
-  if (fail1 === false && fail2 === false){
-      setTime();
+  if (fail1 === false && fail2 === false) {
+    setTime();
   }
-
 };
 let loadName = function () {
   userNameEl.value = localStorage.getItem("userName");
@@ -112,29 +136,29 @@ let showSettings = function (event) {
   darkVerifyEl.classList.add("hidden");
   nameVerifyEl.classList.add("hidden");
   settingsEl.classList.remove("hidden");
-  if(dark === true){
-      darkRadBtnEl.checked = true;
-  }else{
-      lightRadBtnEl.checked = true;
+  if (dark === true) {
+    darkRadBtnEl.checked = true;
+  } else {
+    lightRadBtnEl.checked = true;
   }
   loadName();
 };
 
 setTime = function () {
-    let monthsArray = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-      ];
+  let monthsArray = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
   let today = new Date();
   let date =
     monthsArray[today.getMonth()] +
@@ -180,11 +204,29 @@ setTime = function () {
 
   let time = hour + ":" + minute + half;
   let welcomeEl = document.querySelector("#welcome");
-  welcomeEl.innerHTML = "<h3>" + greeting + userName + "</h3>" + "<h1>" + time + "</h1>" + "<h3>" + date + "</h3>";
+  welcomeEl.innerHTML =
+    "<h3>" +
+    greeting +
+    userName +
+    "</h3>" +
+    "<h1>" +
+    time +
+    "</h1>" +
+    "<h3>" +
+    date +
+    "</h3>";
 
   setTimeout(setTime, 60000);
- 
 };
+
+let setMode = function(){
+    let mode = localStorage.getItem("mode");
+    if (mode === "dark"){
+        setDark();
+    }else{
+        setLight();
+    }
+}
 
 settings();
 setTime();

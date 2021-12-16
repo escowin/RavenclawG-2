@@ -6,13 +6,7 @@ body {
 nav {
     display: none;
 }
-.container {
-    /* display: flex;
-    min-height: 100vh;
-    width: 100vw;
-    align-items: center;
-    justify-content: center; */
-}
+
 .light {
     background-color: rgba(255, 255, 255, 0.8);
     color: #000000;
@@ -54,9 +48,7 @@ nav {
     color: #ff0000;
     font-weight: bold;
 }
-.welcome h1{
-    line-height: 10px;
-}
+
 .btn {
     background-color: #666666;
     color: #000000;
@@ -72,9 +64,16 @@ nav {
     float: left;
     white-space: nowrap;
 }
-p {
+p, h3, h1 {
     margin: 0;
 }
+.dark-txt{
+    color: #ffffff;
+}
+.light-txt{
+    color: #000000;
+}
+
 
 /*mobile setup*/
 @media screen and (max-width: 980px){
@@ -84,8 +83,6 @@ p {
         position: -webkit-sticky;
         position: sticky;
     }
-    nav .fas {
-        color: #000000;
-    }
+
 
 }
