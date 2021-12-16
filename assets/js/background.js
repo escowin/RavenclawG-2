@@ -8,6 +8,32 @@ let updateBtnEl = document.querySelector("#update-btn");
 let nameVerifyEl = document.querySelector("#name-verify");
 let updateSettingsEl = document.querySelector("#update-settings");
 let unsplashLink = "https://www.unsplash.com";
+let darkRadBtnEl = document.getElementById("darkMode");
+let lightRadBtnEl = document.getElementById("lightMode");
+let welcomeEl = document.querySelector("#welcome");
+let weatherEl = document.querySelector("#weather");
+let sportsEl = document.querySelector("#sports");
+let financeEl = document.querySelector("#finance");
+let newsEl = document.querySelector("#news");
+let creditsEl = document.querySelector("#credits");
+let colorArray = [welcomeEl, weatherEl, sportsEl, financeEl, newsEl, creditsEl];
+let mainEl = document.querySelector("#main");
+let darkVerifyEl = document.querySelector("#dark-verify");
+let dark = true;
+let setDark = function(){
+    for(i=0; i < colorArray.length; i++){
+        colorArray[i].classList.remove("light")
+        colorArray[i].classList.add("dark");
+        dark = true;
+    }
+}
+let setLight = function(){
+    for(i=0; i < colorArray.length; i++){
+        colorArray[i].classList.remove("dark")
+        colorArray[i].classList.add("light");
+        dark = false;
+}
+}
 
 viewMode = function () {
   if (window.innerHeight > window.innerWidth) {
@@ -40,25 +66,56 @@ fetch(endpoint)
 let settings = function () {
   if (localStorage.getItem("userName") === null) {
     settingsEl.classList.remove("hidden");
+  }else{
+      mainEl.classList.remove("hidden");
   }
 };
 let updateClicked = function (event) {
   event.preventDefault();
+  let fail1 = true;
+  let fail2 = true;
   if (userNameEl.value == "") {
     nameVerifyEl.classList.remove("hidden");
+    fail1 = true;
   } else {
     let userName = userNameEl.value.trim();
     localStorage.setItem("userName", userName);
     settingsEl.classList.add("hidden");
-    setTime();
+    mainEl.classList.remove("hidden");
+    nameVerifyEl.classList.add("hidden");
+    fail1 = false;
   }
+  if (darkRadBtnEl.checked === true){
+      setDark();
+      fail2 = false;
+      darkVerifyEl.classList.add("hidden");
+  }else if (lightRadBtnEl.checked === true){
+      setLight();
+      fail2 = false;
+      darkVerifyEl.classList.add("hidden");
+  }else{
+      darkVerifyEl.classList.remove("hidden");
+      fail2 = true;
+  }
+
+  if (fail1 === false && fail2 === false){
+      setTime();
+  }
+
 };
 let loadName = function () {
   userNameEl.value = localStorage.getItem("userName");
 };
 let showSettings = function (event) {
   event.preventDefault();
+  darkVerifyEl.classList.add("hidden");
+  nameVerifyEl.classList.add("hidden");
   settingsEl.classList.remove("hidden");
+  if(dark === true){
+      darkRadBtnEl.checked = true;
+  }else{
+      lightRadBtnEl.checked = true;
+  }
   loadName();
 };
 
