@@ -3,12 +3,12 @@ body {
     height: 100vh;
     width: 100vw;
 }
-main {
-    display: flex;
+.container {
+    /* display: flex;
     min-height: 100vh;
     width: 100vw;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
 }
 .light {
     background-color: rgba(255, 255, 255, 0.6);
@@ -36,7 +36,34 @@ main {
     border-radius: 10px;
     padding: 10px;
 }
-
+.hidden {
+    display: none;
+}
+.settings{
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    top: 0px;
+}
+.row {
+    margin: 20px;
+}
+.name-verify {
+    color: #ff0000;
+    font-weight: bold;
+}
+.welcome h1{
+    line-height: 10px;
+}
+.btn {
+    background-color: #666666;
+    color: #000000;
+    border: 1px solid black;
+}
+.btn:hover {
+    background-color: #999999;
+    color: #ffffff;
+    border; 1px solid #ff0000;
+}
 
 /*mobile setup*/
 @media only screen and (max-width: 960px) {
