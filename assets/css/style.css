@@ -3,6 +3,9 @@ body {
     height: 100vh;
     width: 100vw;
 }
+nav {
+    display: none;
+}
 .container {
     /* display: flex;
     min-height: 100vh;
@@ -69,10 +72,20 @@ body {
     float: left;
     white-space: nowrap;
 }
+p {
+    margin: 0;
+}
 
 /*mobile setup*/
-@media only screen and (max-width: 960px) {
-  .mobile-hidden {
-    display: none;
-  }
+@media screen and (max-width: 980px){
+    nav {
+        display: block;
+        top: 0;
+        position: -webkit-sticky;
+        position: sticky;
+    }
+    nav .fas {
+        color: #000000;
+    }
+
 }
