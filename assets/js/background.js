@@ -7,7 +7,7 @@ let userNameEl = document.querySelector("#user-name");
 let updateBtnEl = document.querySelector("#update-btn");
 let nameVerifyEl = document.querySelector("#name-verify");
 let updateSettingsEl = document.querySelector("#update-settings");
-
+let unsplashLink = "https://www.unsplash.com";
 
 viewMode = function () {
   if (window.innerHeight > window.innerWidth) {
@@ -25,7 +25,11 @@ fetch(endpoint)
     console.log(jsonData);
     randomImage = jsonData.urls.full;
     creatorEl.innerText = jsonData.user.name;
-    creatorEl.setAttribute("href", jsonData.user.portfolio_url);
+    if(jsonData.user.portfolio_url !== null){
+        creatorEl.setAttribute("href", jsonData.user.portfolio_url);}
+        else{
+            creatorEl.setAttribute("href", unsplashLink);
+        }
   })
   .then(function () {
     document.body.style.backgroundImage = "url('" + randomImage + "')";
