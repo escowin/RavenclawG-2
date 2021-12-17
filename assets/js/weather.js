@@ -1,10 +1,15 @@
 let cityInputForm = document.querySelector(".citySearchForm");
 let cityInputField = document.querySelector(".citySearchInput");
 let citySearched = document.querySelector(".w-citySearch");
-let weatherDescription = "";
 let currentTemp = document.querySelector(".w-temp");
+let tempRange = document.querySelector(".w-maxAndMin");
 let iconDisplay = document.querySelector(".w-icons");
-let Humidity = document.querySelector(".w-moreInfo");
+let HumidityEl = document.querySelector(".w-moreInfo");
+let WindSpeedEl = document.querySelector(".w-windSp");
+let feelsLikeEl = document.querySelector(".w-feelsLike");
+let weatherMain = document.querySelector(".w-weatherMain");
+let weatherDescription = document.querySelector(".w-weatherDes")
+
 
 
 // Gathers api data from this endpoint
@@ -28,7 +33,6 @@ var citySubmitHandler = function(event) {
         alert("Please enter a valid city.");
     }
 };
-
 // Submit Event for the City Search Form
   cityInputForm.addEventListener("submit", citySubmitHandler);
 
@@ -37,10 +41,14 @@ var citySubmitHandler = function(event) {
   var displayWeatherData = function(data) {
     console.log(data);
 
-    citySearched.textContent = data.name;
-    weatherDescription.textContent = data.weather[0].description;
-    currentTemp.textContent = Math.round(data.main.temp) + " °F";
-    Humidity.textContent = "Humidity: " + data.main.humidity + "%";
+    citySearched.innerHTML = data.name;
+    weatherMain.innerHTML = data.weather[0].main;
+    weatherDescription.innerHTML = data.weather[0].description;
+    currentTemp.innerHTML = Math.round(data.main.temp) + " °F";
+    tempRange.innerHTML = Math.round(data.main.temp_max) + " °F / " + Math.round(data.main.temp_min) + " °F";
+    feelsLikeEl.innerHTML ="Feels Like: " + Math.round(data.main.feels_like) + " °F"
+    HumidityEl.textContent = "Humidity: " + data.main.humidity + " %";
+    WindSpeedEl.textContent = "Wind Speed: " + data.wind.speed + " mph";
 
     let weatherIcon = data.weather[0].icon;
     iconDisplay.textContent = weatherIcon;

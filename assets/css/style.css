@@ -85,7 +85,7 @@ nav {
     line-height: 1;
 }
 /*skeleton overrides for html element margins*/
-p, h3, h1, .weatherContainer {
+p, h3, h1, h5, .weatherContainer div{
     margin: 0;
 }
 /*allows dark and light mode mobile icon coloring*/
@@ -105,4 +105,9 @@ p, h3, h1, .weatherContainer {
         position: -webkit-sticky;
         position: sticky;
     }
+}
+
+
+.weatherUl {
+    list-style-type: none;
 }
