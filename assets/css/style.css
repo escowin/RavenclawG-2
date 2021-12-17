@@ -1,46 +1,108 @@
+/*main body styling*/
 body {
     display: flex;
     height: 100vh;
     width: 100vw;
 }
-main {
-    display: flex;
-    min-height: 100vh;
-    width: 100vw;
-    align-items: center;
-    justify-content: center;
+/*nav is hidden by default for desktop*/
+nav {
+    display: none;
 }
+/*styling for light mode*/
 .light {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.8);
     color: #000000;
 }
+/*styling for dark mode*/
 .dark {
     background-color: rgba(0, 0, 0, 0.6);
     color: #ffffff;
 }
+/*general class used to center things*/
 .center {
     text-align: center;
     align-items: center;
     justify-content: center;
     align-content: center;
 }
+/*aligns bottom credits as far bottom as possible*/
 .bottom-credit {
     bottom: 0px;
 }
+/*styles link in bottom credits*/
 .bottom-credit a {
     text-decoration: none;
     font-weight: bold;
     color: inherit;
 }
+/*used to round the widget windows*/
 .rounded {
     border-radius: 10px;
     padding: 10px;
 }
-
-
-/*mobile setup*/
-@media only screen and (max-width: 960px) {
-  .mobile-hidden {
+/*general class used to show and hide things*/
+.hidden {
     display: none;
-  }
+}
+/*styling for the settings window*/
+.settings{
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    top: 0px;
+}
+/*overrides skeleton's default margins*/
+.row {
+    margin: 20px;
+}
+/*text styling for error messages in settings tab*/
+.name-verify {
+    color: #ff0000;
+    font-weight: bold;
+}
+/*general button styling*/
+.btn {
+    background-color: #666666;
+    color: #000000;
+    border: 1px solid black;
+}
+/*general button hover styling*/
+.btn:hover {
+    background-color: #999999;
+    color: #ffffff;
+    border; 1px solid #ff0000;
+}
+/*settings radio button styling*/
+.radio{
+    display: inline-block;
+    float: left;
+    white-space: nowrap;
+}
+/*settings checkbox styling*/
+.checkbox{
+    display: inline-block;    
+    white-space: nowrap;
+    margin-bottom: 0;
+    line-height: 1;
+}
+/*skeleton overrides for html element margins*/
+p, h3, h1 {
+    margin: 0;
+}
+/*allows dark and light mode mobile icon coloring*/
+.dark-txt{
+    color: #ffffff;
+}
+/*allows dark and light mode mobile icon coloring*/
+.light-txt{
+    color: #000000;
+}
+/*mobile setup*/
+@media screen and (max-width: 980px){
+/*show mobile nav*/
+    nav {
+        display: block;
+        top: 0;
+        position: -webkit-sticky;
+        position: sticky;
+    }
 }

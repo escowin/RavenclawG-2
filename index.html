@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--skeleton framework-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
@@ -15,23 +16,203 @@
     <title>Raven Home</title>
   </head>
   <body>
-      <main>
-    <div class="row">
-      <div class="twelve columns dark rounded" id="weather"></div>
-    </div>
-    <div class="row">
-      <div class="six columns dark rounded" id="sports"></div>
-      <div class="six columns dark rounded" id="finance"></div>
-    </div>
-    <div class="row">
-      <div class="twelve columns dark" id="news"></div>
-    </div>
-    <div class="row bottom-credit center">
-        <div class="dark center rounded" id="credits">
-            <p class="imageDetails center">Background by <a id="creator" href="#">NAME</a> on <a href="https://www.unsplash.com">Unsplash</a>!</p>
+    <!--div with container class allows skeleton framework row classes to function-->
+    <div class="container">
+      <!--settings window loads on empty local storage or when update settings link has been clicked-->
+      <div class="settings hidden rounded" id="settings">
+        <div class="row">
+          <!--username for welcome box-->
+          <div class="four columns" id="name-settings">
+            <form id="user-name-form" class="" name="username" method="POST">
+              <div class="">
+                <label for="user-name">First Name</label>
+                <input
+                  type="text"
+                  name="user-name"
+                  id="user-name"
+                  placeholder="Your First Name"
+                  input
+                  size="15"
+                />
+              </div>
+            </form>
+            <!--error message for no username populated-->
+            <p class="hidden name-verify" id="name-verify">*Input Username*</p>
+            <!--error message for no dark/light populated-->
+            <p class="hidden name-verify" id="dark-verify">
+              *Select Dark/Light Mode*
+            </p>
+            <!--dark light mode settings radio buttons-->
+            <form class="radio">
+              <input
+                type="radio"
+                id="darkMode"
+                name="darkLight"
+                value="darkMode"
+                class="radio"
+              /><label for="darkMode">Dark</label
+              ><input
+                type="radio"
+                id="lightMode"
+                name="darkLight"
+                value="lightMode"
+                class="radio"
+              /><label for="lightMode">Light</label>
+            </form>
+            <br />
+          </div>
+          <!--area for setting types of background images-->
+          <div class="four columns" id="background-settings">
+            Background Types:<br />
+            <label class="checkbox" for="animals"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                id="animalsImg"
+                name="animals"
+                value="animals"
+              />
+              Animals</label
+            ><br />
+            <label class="checkbox" for="cars"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                id="carsImg"
+                name="cars"
+                value="cars"
+              />
+              Cars</label
+            ><br />
+            <label class="checkbox" for="grafitti"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                id="grafittiImg"
+                name="grafitti"
+                value="grafitti"
+              />
+              Grafitti</label
+            ><br />
+            <label class="checkbox" for="libraries"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                id="librariesImg"
+                name="libraries"
+                value="libraries"
+              />
+              Libraries</label
+            ><br />
+            <label class="checkbox" for="scenic"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                id="scenicImg"
+                name="scenic"
+                value="scenic"
+              />
+              Scenic</label
+            ><br />
+            <label class="checkbox" for="skylines"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                id="skylinesImg"
+                name="skylines"
+                value="skylines"
+              />
+              Skylines</label
+            ><br />
+            <label class="checkbox" for="sports"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                id="sportsImg"
+                name="sports"
+                value="sports"
+              />
+              Sports</label
+            >
+          </div>
+          <!--weather settings go here-->
+          <div class="four columns" id="weather-settings"><label class="checkbox" for="weather"><input class="checkbox" type="checkbox" id="weather-check" name="weather" value="weather"/>
+            Show Weather</label></div>
+        </div>
+        <div class="row">
+          <!--sports settings go here-->
+          <div class="four columns" id="sports-settings"><label class="checkbox" for="weather"><input class="checkbox" type="checkbox" id="sports-check" name="sports" value="sports"/>
+            Show Sports</label></div>
+            <!--finance settings go here-->
+          <div class="four columns" id="finance-settings"><label class="checkbox" for="finance"><input class="checkbox" type="checkbox" id="finance-check" name="finance" value="finance"/>
+            Show Finance</label></div>
+            <!--news settings go here-->
+          <div class="four columns" id="news-settings"><label class="checkbox" for="news"><input class="checkbox" type="checkbox" id="news-check" name="news" value="news"/>
+            Show News</label></div>
+        </div>
+        <!--button hides settings menu and updates javascript files-->
+        <button id="update-btn" class="btn">UPDATE</button>
       </div>
+      <!--navigation hidden unless mobile screen size used-->
+      <nav class="row dark center rounded" id="nav">
+        <div class="three columns">
+          <a href="#weather"
+            ><i class="dark-txt fas fa-cloud-sun-rain" id="weather-icon"></i
+          ></a>
+        </div>
+        <div class="three columns">
+          <a href="#sports"
+            ><i class="dark-txt fas fa-basketball-ball" id="sports-icon"></i
+          ></a>
+        </div>
+        <div class="three columns">
+          <a href="#finance"
+            ><i class="dark-txt fas fa-dollar-sign" id="finance-icon"></i
+          ></a>
+        </div>
+        <div class="three columns">
+          <a href="#news"><i class="dark-txt fas fa-rss" id="news-icon"></i></a>
+        </div>
+      </nav>
+      <!--main tag is hidden until submit button is clicked on settings window Main hosts widgets-->
+      <main class="hidden" id="main">
+        <!--welcome widget row-->
+        <div class="row">
+          <div class="dark rounded center welcome" id="welcome"></div>
+        </div>
+        <!--weather widget row-->
+        <div class="row">
+          <div class="dark rounded hidden" id="weather">
+            Weather</div>
+        </div>
+        <!--sports and finance widget row-->
+        <div class="row">
+          <div class="one-half column dark rounded hidden" id="sports">
+            Sports
+          </div>
+          <div class="one-half column dark rounded hidden" id="finance">
+            Finance
+          </div>
+        </div>
+        <!--news widget row-->
+        <div class="row">
+          <div class="dark rounded hidden" id="news">
+            News
+          </div>
+        </div>
+        <!--background image credits required by unsplash-->
+        <div class="bottom-credit center row">
+          <div class="dark center rounded" id="credits">
+            <p class="imageDetails center">
+              Background by <a id="creator" href="#">NAME</a> on
+              <a href="https://www.unsplash.com">Unsplash</a>!<br />
+              <!--update settings clickable text allows settings to be shown and altered again-->
+              <a href="#" id="update-settings">UPDATE SETTINGS</a>
+            </p>
+          </div>
+        </div>
+      </main>
     </div>
-    </main>
     <script src="assets\js\background.js"></script>
   </body>
 </html>
