@@ -1,3 +1,4 @@
+// Global variables defined
 let clientID = "T55TOxKxDJMpz91j6fEuSi-nPDhq1TpFAFtB91u4X9o";
 let endpoint = ``;
 let randomImage = "";
@@ -17,6 +18,7 @@ let financeEl = document.querySelector("#finance");
 let newsEl = document.querySelector("#news");
 let creditsEl = document.querySelector("#credits");
 let navEl = document.querySelector("#nav");
+// colorArray is used to allow dark/light mode to be set to backgrounds of widgets
 let colorArray = [
   welcomeEl,
   weatherEl,
@@ -33,6 +35,7 @@ let weatherIconEl = document.querySelector("#weather-icon");
 let sportsIconEl = document.querySelector("#sports-icon");
 let financeIconEl = document.querySelector("#finance-icon");
 let newsIconEl = document.querySelector("#news-icon");
+// iconArray is used to allow dark/light mode to be set to mobile nav icons
 let iconArray = [weatherIconEl, sportsIconEl, financeIconEl, newsIconEl];
 let weatherCheckEl = document.querySelector("#weather-check");
 let sportsCheckEl = document.querySelector("#sports-check");
@@ -47,7 +50,8 @@ let skylinesImgCheckEl = document.querySelector("#skylinesImg");
 let sportsImgCheckEl = document.querySelector("#sportsImg");
 let insertCollection;
 let backgroundTypeArray = [];
-let loadChecks = function(){
+// loadChecks enables the settings tab to be populated with the correct settings checked upon reload
+let loadChecks = function () {
   let animals = localStorage.getItem("animals");
   let cars = localStorage.getItem("cars");
   let grafitti = localStorage.getItem("grafitti");
@@ -59,117 +63,121 @@ let loadChecks = function(){
   let sportsEl = localStorage.getItem("sportsEl");
   let financeEl = localStorage.getItem("financeEl");
   let newsEl = localStorage.getItem("newsEl");
-  if(animals == "true"){
+  if (animals == "true") {
     animalsImgCheckEl.checked = true;
   }
-  if(cars == "true"){
+  if (cars == "true") {
     carsImgCheckEl.checked = true;
   }
-  if(grafitti == "true"){
+  if (grafitti == "true") {
     grafittiImgCheckEl.checked = true;
   }
-  if(libraries == "true"){
+  if (libraries == "true") {
     librariesImgCheckEl.checked = true;
   }
-  if(scenic == "true"){
+  if (scenic == "true") {
     scenicImgCheckEl.checked = true;
   }
-  if(skylines == "true"){
+  if (skylines == "true") {
     skylinesImgCheckEl.checked = true;
   }
-  if(sports == "true"){
+  if (sports == "true") {
     sportsImgCheckEl.checked = true;
   }
-  if(weatherEl == "true"){
+  if (weatherEl == "true") {
     weatherCheckEl.checked = true;
   }
-  if(sportsEl == "true"){
+  if (sportsEl == "true") {
     sportsCheckEl.checked = true;
   }
-  if(financeEl == "true"){
+  if (financeEl == "true") {
     financeCheckEl.checked = true;
   }
-  if(newsEl == "true"){
+  if (newsEl == "true") {
     newsCheckEl.checked = true;
   }
-}
-let hideElements = function(){
-  if(weatherCheckEl.checked === true){
+};
+// hideElements is used to hide and unhide widgets from main page
+let hideElements = function () {
+  if (weatherCheckEl.checked === true) {
     weatherEl.classList.remove("hidden");
     localStorage.setItem("weatherEl", "true");
-  }else{
+  } else {
     weatherEl.classList.add("hidden");
     localStorage.setItem("weatherEl", "false");
   }
-  if(sportsCheckEl.checked === true){
+  if (sportsCheckEl.checked === true) {
     sportsEl.classList.remove("hidden");
     localStorage.setItem("sportsEl", "true");
-  }else{
+  } else {
     sportsEl.classList.add("hidden");
     localStorage.setItem("sportsEl", "false");
   }
-  if(financeCheckEl.checked === true){
+  if (financeCheckEl.checked === true) {
     financeEl.classList.remove("hidden");
     localStorage.setItem("financeEl", "true");
-  }else{
+  } else {
     financeEl.classList.add("hidden");
-    localStorage.setItem("financeEl", "false");4
+    localStorage.setItem("financeEl", "false");
+    4;
   }
-  if(newsCheckEl.checked === true){
+  if (newsCheckEl.checked === true) {
     newsEl.classList.remove("hidden");
     localStorage.setItem("newsEl", "true");
-  }else{
+  } else {
     newsEl.classList.add("hidden");
     localStorage.setItem("newsEl", "false");
   }
-}
-let checkImages = function(){
+};
+// checkImages takes input from background settings window and sets the type of background images to be loaded it also stores this info in local storage
+let checkImages = function () {
   backgroundTypeArray = [];
-  if(animalsImgCheckEl.checked === true){
-    backgroundTypeArray.push('4760062');
+  if (animalsImgCheckEl.checked === true) {
+    backgroundTypeArray.push("4760062");
     localStorage.setItem("animals", "true");
-  }else{
+  } else {
     localStorage.setItem("animals", "false");
   }
-  if(carsImgCheckEl.checked === true){
-    backgroundTypeArray.push('1989985');
+  if (carsImgCheckEl.checked === true) {
+    backgroundTypeArray.push("1989985");
     localStorage.setItem("cars", "true");
-  }else{
+  } else {
     localStorage.setItem("cars", "false");
   }
-  if(grafittiImgCheckEl.checked === true){
-    backgroundTypeArray.push('2138314');
+  if (grafittiImgCheckEl.checked === true) {
+    backgroundTypeArray.push("2138314");
     localStorage.setItem("grafitti", "true");
-  }else{
+  } else {
     localStorage.setItem("grafitti", "false");
   }
-  if(librariesImgCheckEl.checked === true){
-    backgroundTypeArray.push('1995427');
+  if (librariesImgCheckEl.checked === true) {
+    backgroundTypeArray.push("1995427");
     localStorage.setItem("libraries", "true");
-  }else{
+  } else {
     localStorage.setItem("libraries", "false");
   }
-  if(scenicImgCheckEl.checked === true){
-    backgroundTypeArray.push('136095');
+  if (scenicImgCheckEl.checked === true) {
+    backgroundTypeArray.push("136095");
     localStorage.setItem("scenic", "true");
-  }else{
+  } else {
     localStorage.setItem("scenic", "false");
   }
-  if(skylinesImgCheckEl.checked === true){
-    backgroundTypeArray.push('917009');
+  if (skylinesImgCheckEl.checked === true) {
+    backgroundTypeArray.push("917009");
     localStorage.setItem("skylines", "true");
-  }else{
+  } else {
     localStorage.setItem("skylines", "false");
   }
-  if(sportsImgCheckEl.checked === true){
-    backgroundTypeArray.push('536788');
+  if (sportsImgCheckEl.checked === true) {
+    backgroundTypeArray.push("536788");
     localStorage.setItem("sports", "true");
-  }else{
+  } else {
     localStorage.setItem("sports", "false");
   }
   insertCollection = backgroundTypeArray.toString();
   localStorage.setItem("collection", insertCollection);
-}
+};
+// setDark sets dark mode and stores that in local storage
 let setDark = function () {
   for (i = 0; i < colorArray.length; i++) {
     colorArray[i].classList.remove("light");
@@ -182,6 +190,7 @@ let setDark = function () {
   dark = true;
   localStorage.setItem("mode", "dark");
 };
+// setLight sets light mode and stores that in local storage
 let setLight = function () {
   for (i = 0; i < colorArray.length; i++) {
     colorArray[i].classList.remove("dark");
@@ -194,7 +203,8 @@ let setLight = function () {
   dark = false;
   localStorage.setItem("mode", "light");
 };
-
+// viewMode is the first executable function and sets the endpoint url by calling variables that dictate what image types are required
+// viewMode also checks screen height to width ratio and gets the right image orientation
 viewMode = function () {
   insertCollection = localStorage.getItem("collection");
   if (window.innerHeight > window.innerWidth) {
@@ -204,6 +214,7 @@ viewMode = function () {
   }
 };
 viewMode();
+//this sends the request to the unsplash api and returns the data used for backgrounds and credits. the last then applies this data
 fetch(endpoint)
   .then(function (response) {
     return response.json();
@@ -222,7 +233,7 @@ fetch(endpoint)
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundRepeat = "no-repeat";
   });
-
+// settings checks if the user has data in local storage then decides if the settings window should show4
 let settings = function () {
   if (localStorage.getItem("userName") === null) {
     settingsEl.classList.remove("hidden");
@@ -233,6 +244,7 @@ let settings = function () {
     hideElements();
   }
 };
+// updateClicked executes if the update button in the settings window is clicked. this checks for a user name and a light or dark mode
 let updateClicked = function (event) {
   event.preventDefault();
   let fail1 = true;
@@ -267,10 +279,11 @@ let updateClicked = function (event) {
     hideElements();
   }
 };
+// loadName loads user name from storage so it is prepopulated when the settings is reloaded
 let loadName = function () {
   userNameEl.value = localStorage.getItem("userName");
 };
-
+// showSettings allows the settings tab to be reloaded
 let showSettings = function (event) {
   event.preventDefault();
   loadChecks();
@@ -282,9 +295,9 @@ let showSettings = function (event) {
   } else {
     lightRadBtnEl.checked = true;
   }
-   loadName();
+  loadName();
 };
-
+// setTime controls most of the welcome widget
 setTime = function () {
   let monthsArray = [
     "January",
@@ -359,17 +372,18 @@ setTime = function () {
 
   setTimeout(setTime, 60000);
 };
-
-let setMode = function(){
-    let mode = localStorage.getItem("mode");
-    if (mode === "dark"){
-        setDark();
-    }else{
-        setLight();
-    }
-}
+// setMode sets dark/light modes on page reload
+let setMode = function () {
+  let mode = localStorage.getItem("mode");
+  if (mode === "dark") {
+    setDark();
+  } else {
+    setLight();
+  }
+};
 
 settings();
 setTime();
+//event listeners
 updateBtnEl.addEventListener("click", updateClicked);
 updateSettingsEl.addEventListener("click", showSettings);
