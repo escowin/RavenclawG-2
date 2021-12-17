@@ -34,12 +34,97 @@ let sportsIconEl = document.querySelector("#sports-icon");
 let financeIconEl = document.querySelector("#finance-icon");
 let newsIconEl = document.querySelector("#news-icon");
 let iconArray = [weatherIconEl, sportsIconEl, financeIconEl, newsIconEl];
-let backgroundTypeArray = [917009,536788,4760062];
+let weatherCheckEl = document.querySelector("#weather-check");
+let sportsCheckEl = document.querySelector("#sports-check");
+let financeCheckEl = document.querySelector("#finance-check");
+let newsCheckEl = document.querySelector("#news-check");
+let animalsImgCheckEl = document.querySelector("#animalsImg");
+let carsImgCheckEl = document.querySelector("#carsImg");
+let grafittiImgCheckEl = document.querySelector("#grafittiImg");
+let librariesImgCheckEl = document.querySelector("#librariesImg");
+let scenicImgCheckEl = document.querySelector("#scenicImg");
+let skylinesImgCheckEl = document.querySelector("#skylinesImg");
+let sportsImgCheckEl = document.querySelector("#sportsImg");
 let insertCollection;
-
-let multiBackground = function (){
-  insertCollection = backgroundTypeArray.toString();
+let backgroundTypeArray = [];
+let loadChecks = function(){
+  let animals = localStorage.getItem("animals");
+  let cars = localStorage.getItem("cars");
+  let grafitti = localStorage.getItem("grafitti");
+  let libraries = localStorage.getItem("libraries");
+  let scenic = localStorage.getItem("scenic");
+  let skylines = localStorage.getItem("skylines");
+  let sports = localStorage.getItem("sports");
+  if(animals == "true"){
+    animalsImgCheckEl.checked = true;
+  }
+  if(cars == "true"){
+    carsImgCheckEl.checked = true;
+  }
+  if(grafitti == "true"){
+    grafittiImgCheckEl.checked = true;
+  }
+  if(libraries == "true"){
+    librariesImgCheckEl.checked = true;
+  }
+  if(scenic == "true"){
+    scenicImgCheckEl.checked = true;
+  }
+  if(skylines == "true"){
+    skylinesImgCheckEl.checked = true;
+  }
+  if(sports == "true"){
+    sportsImgCheckEl.checked = true;
+  }
 }
+let checkImages = function(){
+  backgroundTypeArray = [];
+  if(animalsImgCheckEl.checked === true){
+    backgroundTypeArray.push('4760062');
+    localStorage.setItem("animals", "true");
+  }else{
+    localStorage.setItem("animals", "false");
+  }
+  if(carsImgCheckEl.checked === true){
+    backgroundTypeArray.push('1989985');
+    localStorage.setItem("cars", "true");
+  }else{
+    localStorage.setItem("cars", "false");
+  }
+  if(grafittiImgCheckEl.checked === true){
+    backgroundTypeArray.push('2138314');
+    localStorage.setItem("grafitti", "true");
+  }else{
+    localStorage.setItem("grafitti", "false");
+  }
+  if(librariesImgCheckEl.checked === true){
+    backgroundTypeArray.push('1995427');
+    localStorage.setItem("libraries", "true");
+  }else{
+    localStorage.setItem("libraries", "false");
+  }
+  if(scenicImgCheckEl.checked === true){
+    backgroundTypeArray.push('136095');
+    localStorage.setItem("scenic", "true");
+  }else{
+    localStorage.setItem("scenic", "false");
+  }
+  if(skylinesImgCheckEl.checked === true){
+    backgroundTypeArray.push('917009');
+    localStorage.setItem("skylines", "true");
+  }else{
+    localStorage.setItem("skylines", "false");
+  }
+  if(sportsImgCheckEl.checked === true){
+    backgroundTypeArray.push('536788');
+    localStorage.setItem("sports", "true");
+  }else{
+    localStorage.setItem("sports", "false");
+  }
+  insertCollection = backgroundTypeArray.toString();
+  localStorage.setItem("collection", insertCollection);
+}
+
 
 let setDark = function () {
   for (i = 0; i < colorArray.length; i++) {
@@ -67,6 +152,7 @@ let setLight = function () {
 };
 
 viewMode = function () {
+  insertCollection = localStorage.getItem("collection");
   if (window.innerHeight > window.innerWidth) {
     endpoint = `https://api.unsplash.com/photos/random/?orientation=portrait&collections=${insertCollection}&client_id=${clientID}`;
   } else {
@@ -130,14 +216,17 @@ let updateClicked = function (event) {
   }
 
   if (fail1 === false && fail2 === false) {
+    checkImages();
     setTime();
   }
 };
 let loadName = function () {
   userNameEl.value = localStorage.getItem("userName");
 };
+
 let showSettings = function (event) {
   event.preventDefault();
+  loadChecks();
   darkVerifyEl.classList.add("hidden");
   nameVerifyEl.classList.add("hidden");
   settingsEl.classList.remove("hidden");
@@ -146,7 +235,7 @@ let showSettings = function (event) {
   } else {
     lightRadBtnEl.checked = true;
   }
-  loadName();
+   loadName();
 };
 
 setTime = function () {
