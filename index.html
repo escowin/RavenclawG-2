@@ -135,9 +135,26 @@
               Sports</label
             >
           </div>
+
+
+
+
           <!--weather settings go here-->
           <div class="four columns" id="weather-settings"><label class="checkbox" for="weather"><input class="checkbox" type="checkbox" id="weather-check" name="weather" value="weather"/>
-            Show Weather</label></div>
+            Show Weather</label>
+              <form>
+                <div class="row">
+                  <label for="citySearchBox">Search for a City</label> 
+                  <input type="text" placeholder="City Name"/>
+                    <button>Submit</button>
+                </div>
+              </form>
+          </div>
+
+
+
+
+
         </div>
         <div class="row">
           <!--sports settings go here-->
@@ -223,5 +240,6 @@
       </main>
     </div>
     <script src="assets\js\background.js"></script>
+    <script src="assets\js\weather.js"></script>
   </body>
 </html>
