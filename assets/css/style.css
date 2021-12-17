@@ -59,10 +59,16 @@ nav {
     color: #ffffff;
     border; 1px solid #ff0000;
 }
-.radio {
+.radio{
     display: inline-block;
     float: left;
     white-space: nowrap;
+}
+.checkbox{
+    display: inline-block;    
+    white-space: nowrap;
+    margin-bottom: 0;
+    line-height: 1;
 }
 p, h3, h1 {
     margin: 0;

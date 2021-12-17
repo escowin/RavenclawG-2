@@ -34,6 +34,12 @@ let sportsIconEl = document.querySelector("#sports-icon");
 let financeIconEl = document.querySelector("#finance-icon");
 let newsIconEl = document.querySelector("#news-icon");
 let iconArray = [weatherIconEl, sportsIconEl, financeIconEl, newsIconEl];
+let backgroundTypeArray = [917009,536788,4760062];
+let insertCollection;
+
+let multiBackground = function (){
+  insertCollection = backgroundTypeArray.toString();
+}
 
 let setDark = function () {
   for (i = 0; i < colorArray.length; i++) {
@@ -62,9 +68,9 @@ let setLight = function () {
 
 viewMode = function () {
   if (window.innerHeight > window.innerWidth) {
-    endpoint = `https://api.unsplash.com/photos/random/?orientation=portrait&collections=136095&client_id=${clientID}`;
+    endpoint = `https://api.unsplash.com/photos/random/?orientation=portrait&collections=${insertCollection}&client_id=${clientID}`;
   } else {
-    endpoint = `https://api.unsplash.com/photos/random/?orientation=landscape&collections=136095&client_id=${clientID}`;
+    endpoint = `https://api.unsplash.com/photos/random/?orientation=landscape&collections=${insertCollection}&client_id=${clientID}`;
   }
 };
 viewMode();
@@ -73,7 +79,6 @@ fetch(endpoint)
     return response.json();
   })
   .then(function (jsonData) {
-    console.log(jsonData);
     randomImage = jsonData.urls.full;
     creatorEl.innerText = jsonData.user.name;
     if (jsonData.user.portfolio_url !== null) {
