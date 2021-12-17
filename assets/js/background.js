@@ -55,6 +55,10 @@ let loadChecks = function(){
   let scenic = localStorage.getItem("scenic");
   let skylines = localStorage.getItem("skylines");
   let sports = localStorage.getItem("sports");
+  let weatherEl = localStorage.getItem("weatherEl");
+  let sportsEl = localStorage.getItem("sportsEl");
+  let financeEl = localStorage.getItem("financeEl");
+  let newsEl = localStorage.getItem("newsEl");
   if(animals == "true"){
     animalsImgCheckEl.checked = true;
   }
@@ -75,6 +79,48 @@ let loadChecks = function(){
   }
   if(sports == "true"){
     sportsImgCheckEl.checked = true;
+  }
+  if(weatherEl == "true"){
+    weatherCheckEl.checked = true;
+  }
+  if(sportsEl == "true"){
+    sportsCheckEl.checked = true;
+  }
+  if(financeEl == "true"){
+    financeCheckEl.checked = true;
+  }
+  if(newsEl == "true"){
+    newsCheckEl.checked = true;
+  }
+}
+let hideElements = function(){
+  if(weatherCheckEl.checked === true){
+    weatherEl.classList.remove("hidden");
+    localStorage.setItem("weatherEl", "true");
+  }else{
+    weatherEl.classList.add("hidden");
+    localStorage.setItem("weatherEl", "false");
+  }
+  if(sportsCheckEl.checked === true){
+    sportsEl.classList.remove("hidden");
+    localStorage.setItem("sportsEl", "true");
+  }else{
+    sportsEl.classList.add("hidden");
+    localStorage.setItem("sportsEl", "false");
+  }
+  if(financeCheckEl.checked === true){
+    financeEl.classList.remove("hidden");
+    localStorage.setItem("financeEl", "true");
+  }else{
+    financeEl.classList.add("hidden");
+    localStorage.setItem("financeEl", "false");4
+  }
+  if(newsCheckEl.checked === true){
+    newsEl.classList.remove("hidden");
+    localStorage.setItem("newsEl", "true");
+  }else{
+    newsEl.classList.add("hidden");
+    localStorage.setItem("newsEl", "false");
   }
 }
 let checkImages = function(){
@@ -124,8 +170,6 @@ let checkImages = function(){
   insertCollection = backgroundTypeArray.toString();
   localStorage.setItem("collection", insertCollection);
 }
-
-
 let setDark = function () {
   for (i = 0; i < colorArray.length; i++) {
     colorArray[i].classList.remove("light");
@@ -185,6 +229,8 @@ let settings = function () {
   } else {
     mainEl.classList.remove("hidden");
     setMode();
+    loadChecks();
+    hideElements();
   }
 };
 let updateClicked = function (event) {
@@ -218,6 +264,7 @@ let updateClicked = function (event) {
   if (fail1 === false && fail2 === false) {
     checkImages();
     setTime();
+    hideElements();
   }
 };
 let loadName = function () {
