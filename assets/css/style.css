@@ -64,7 +64,9 @@ body {
     color: #ffffff;
     border: 1px solid #ff0000;
 }
-
+canvas {
+    position: absolute;
+}
 /*mobile setup*/
 @media only screen and (max-width: 960px) {
   .mobile-hidden {
