@@ -10,6 +10,7 @@ let WindSpeedEl = document.querySelector(".w-windSp");
 let feelsLikeEl = document.querySelector(".w-feelsLike");
 let weatherMain = document.querySelector(".w-weatherMain");
 let weatherDescription = document.querySelector(".w-weatherDes")
+let weatherUpdateEl = document.querySelector("#update-btn");
 
 
 
@@ -35,7 +36,8 @@ var citySubmitHandler = function(event) {
     }
 };
 // Submit Event for the City Search Form
-  cityInputForm.addEventListener("submit", citySubmitHandler);
+  // cityInputForm.addEventListener("submit", citySubmitHandler);
+  weatherUpdateEl.addEventListener("click", citySubmitHandler);
 
 
   // Displays data on the page
