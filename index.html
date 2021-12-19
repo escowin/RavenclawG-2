@@ -142,7 +142,7 @@
                 <div class="row">
                   <label for="citySearchBox">Search for a City</label> 
                   <input type="text" placeholder="City Name" class="citySearchInput"/>
-                    <button>Submit</button>
+                    <!-- <button>Submit</button> -->
                 </div>
               </form>
           </div>
@@ -189,7 +189,7 @@
           <div class="dark rounded center welcome" id="welcome"></div>
         </div>
         <!--weather widget row-->
-        <div class="row weatherContainer">
+        <div class="row weatherContainer center" onload="reloadWeather">
           <div class="dark rounded hidden row" id="weather">
             <div class="three columns initialWeather" >
               <div class="w-citySearch">Weather</div>

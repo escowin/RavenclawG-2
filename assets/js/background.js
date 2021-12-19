@@ -232,6 +232,7 @@ fetch(endpoint)
     document.body.style.backgroundImage = "url('" + randomImage + "')";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundAttachment = "fixed";
   });
 // settings checks if the user has data in local storage then decides if the settings window should show4
 let settings = function () {

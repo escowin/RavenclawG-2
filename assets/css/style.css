@@ -85,7 +85,7 @@ nav {
     line-height: 1;
 }
 /*skeleton overrides for html element margins*/
-p, h3, h1, h5, .weatherContainer div{
+p, h3, h1, h5, .weatherContainer div, h6{
     margin: 0;
 }
 /*allows dark and light mode mobile icon coloring*/
