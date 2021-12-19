@@ -108,6 +108,13 @@ p, h3, h1, h5, .weatherContainer div{
 }
 
 
+
+/* Weather Widget */
 .weatherUl {
     list-style-type: none;
+}
+
+.weatherContainer {
+    justify-content: center;
+    align-items: center;
 }
