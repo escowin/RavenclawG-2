@@ -114,7 +114,16 @@ p, h3, h1, h5, .weatherContainer div{
     list-style-type: none;
 }
 
-.weatherContainer {
-    justify-content: center;
-    align-items: center;
+.w-temp, .w-maxAndMin, .w-feelsLike, .w-moreInfo, .w-windSp, .w-citySearch, .w-weatherMain, .w-weatherDes {
+    display: flex;
+    justify-content: center;  
 }
+
+.w-icons {
+   display: flex;
+   justify-content: center;
+   height: 100px;
+   width: 100px;
+}
+
+
