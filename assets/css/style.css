@@ -8,6 +8,9 @@ body {
 nav {
     display: none;
 }
+/* .weatherContainer {
+    width: 100%;
+} */
 /*styling for light mode*/
 .light {
     background-color: rgba(255, 255, 255, 0.8);
@@ -17,6 +20,7 @@ nav {
 .dark {
     background-color: rgba(0, 0, 0, 0.6);
     color: #ffffff;
+    /* width: 100%; */
 }
 /*general class used to center things*/
 .center {
