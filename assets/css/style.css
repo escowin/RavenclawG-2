@@ -82,7 +82,7 @@ nav {
     white-space: nowrap;
 }
 /*settings checkbox styling*/
-.checkbox{
+checkbox{
     display: inline-block;    
     white-space: nowrap;
     margin-bottom: 0;
