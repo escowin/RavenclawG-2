@@ -126,4 +126,6 @@ p, h3, h1, h5, .weatherContainer div, h6{
    width: 100px;
 }
 
-
+.container-news{
+    color: black;
+}
