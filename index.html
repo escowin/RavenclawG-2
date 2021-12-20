@@ -12,11 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <script
-      src="https://kit.fontawesome.com/2f70e28a2e.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="assets/css/style.css"/>
     <title>Raven Home</title>
   </head>
   <body>
@@ -141,7 +137,15 @@
           </div>
           <!--weather settings go here-->
           <div class="four columns" id="weather-settings"><label class="checkbox" for="weather"><input class="checkbox" type="checkbox" id="weather-check" name="weather" value="weather"/>
-            Show Weather</label></div>
+            Show Weather</label>
+              <form class="citySearchForm">
+                <div class="row">
+                  <label for="citySearchBox">Search for a City</label> 
+                  <input type="text" placeholder="City Name" class="citySearchInput"/>
+                    <!-- <button>Submit</button> -->
+                </div>
+              </form>
+          </div>
         </div>
         <div class="row">
           <!--sports settings go here-->
@@ -185,9 +189,26 @@
           <div class="dark rounded center welcome" id="welcome"></div>
         </div>
         <!--weather widget row-->
-        <div class="row">
-          <div class="dark rounded hidden" id="weather">
-            Weather</div>
+        <div class="row weatherContainer center" onload="reloadWeather">
+          <div class="dark rounded hidden row" id="weather">
+            <div class="three columns initialWeather" >
+              <div class="w-citySearch">Weather</div>
+                <h5 class="w-weatherMain"></h5>
+                  <p class="w-weatherDes"></p>
+            </div>
+              <h1 class="three columns w-icons"></h1>
+                <div class="three columns">
+                  <h1 class="w-temp"></h1>
+                    <h6 class="w-maxAndMin"></h6>
+                </div>
+                  <div class="three columns extraInfo">
+                    <div>
+                      <p class="w-feelsLike"></p>
+                      <p class="w-moreInfo"></p>
+                      <p class="w-windSp"></p>
+                    </div>
+                  </div>
+          </div>
         </div>
         <!--sports and finance widget row-->
         <div class="row">
@@ -218,8 +239,6 @@
       </main>
     </div>
     <script src="assets\js\background.js"></script>
-    <script src="./assets/js/news.js"></script>
-
-</body>
+    <script src="assets\js\weather.js"></script>
   </body>
 </html>
