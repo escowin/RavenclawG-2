@@ -14,9 +14,7 @@ let weatherUpdateEl = document.querySelector("#update-btn");
 // Gathers api data from this endpoint
 var getOpenWeatherData = function (city) {
   var endPoint =
-    "https://api.openweathermap.org/data/2.5/weather?q=" +
-    city +
-    "&units=imperial&appid=9cea4c2c630ad1c978d7cdfabc1cee75";
+    "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=9cea4c2c630ad1c978d7cdfabc1cee75";
   fetch(endPoint).then(function (response) {
     response.json().then(function (data) {
       displayWeatherData(data);
@@ -35,8 +33,8 @@ var citySubmitHandler = function (event) {
     alert("Please enter a valid city.");
   }
 };
+
 // Submit Event for the City Search Form
-// cityInputForm.addEventListener("submit", citySubmitHandler);
 weatherUpdateEl.addEventListener("click", citySubmitHandler);
 
 // Displays data on the page
@@ -80,10 +78,7 @@ var displayWeatherData = function (data) {
 
   let weatherIcon = data.weather[0].icon;
   var iconUrl = "http://openweathermap.org/img/wn/" + weatherIcon + ".png";
-  iconDisplay.innerHTML =
-    "<img src='http://openweathermap.org/img/w/" +
-    weatherIcon +
-    ".png' alt='Icon depicting current weather.'>";
+  iconDisplay.innerHTML = "<img src='http://openweathermap.org/img/w/" + weatherIcon + ".png' alt='Icon depicting current weather.'>";
   localStorage.setItem("Icon", weatherIcon);
 };
 
@@ -92,6 +87,7 @@ var displayWeatherData = function (data) {
 let reloadWeather = function () {
   if (localStorage.getItem("citySearch") !== null) {
     //take citySearch and turn into full weather widget
+
     console.log("weather reload");
   }
 };
