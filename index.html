@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
     <!--skeleton framework-->
     <!-- <link
       rel="stylesheet"
@@ -14,6 +16,7 @@
     /> -->
     <!-- materialize fonts/css framework used in news section  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
    <!-- jQuery javaScript library  -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -24,12 +27,22 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+=======
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+
+    <!-- jQuery javaScript library  -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+>>>>>>> 0b2f42769d81bd21d1adb4cc4922f0f0ca8ed200
 
     <script
       src="https://kit.fontawesome.com/2f70e28a2e.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Raven Home</title>
   </head>
   <body>
@@ -41,7 +54,7 @@
           <!--username for welcome box-->
           <div class="four columns" id="name-settings">
             <form id="user-name-form" class="" name="username" method="POST">
-              <div class="">
+              <div class="user-name">
                 <label for="user-name">First Name</label>
                 <input
                   type="text"
@@ -61,37 +74,40 @@
             </p>
             <!--dark light mode settings radio buttons-->
             <form class="radio">
+              <label for="darkMode">
               <input
                 type="radio"
                 id="darkMode"
                 name="darkLight"
                 value="darkMode"
                 class="radio"
-              /><label for="darkMode">Dark</label
-              ><input
+              /><span>Dark</span></label
+              >
+              <label for="lightMode">
+              <input
                 type="radio"
                 id="lightMode"
                 name="darkLight"
                 value="lightMode"
                 class="radio"
-              /><label for="lightMode">Light</label>
+              /> <span>Light</span></label>
             </form>
             <br />
           </div>
           <!--area for setting types of background images-->
           <div class="four columns" id="background-settings">
-            Background Types:<br />
-            <label class="checkbox" for="animals"
-              ><input
+            Background Types:<br/>
+            <label lass="checkbox">
+              <input
                 class="checkbox"
                 type="checkbox"
                 id="animalsImg"
                 name="animals"
-                value="animals"
-              />
-              Animals</label
-            ><br />
-            <label class="checkbox" for="cars"
+                value="animals">
+              <span>Animals</span>
+            </label>
+              <br/>
+            <label class="checkbox"
               ><input
                 class="checkbox"
                 type="checkbox"
@@ -99,9 +115,10 @@
                 name="cars"
                 value="cars"
               />
-              Cars</label
-            ><br />
-            <label class="checkbox" for="grafitti"
+              <span>Cars</span>
+              </label>
+              <br/>
+            <label class="checkbox"
               ><input
                 class="checkbox"
                 type="checkbox"
@@ -109,9 +126,9 @@
                 name="grafitti"
                 value="grafitti"
               />
-              Grafitti</label
+              <span>Grafitti</span></label
             ><br />
-            <label class="checkbox" for="libraries"
+            <label class="checkbox"
               ><input
                 class="checkbox"
                 type="checkbox"
@@ -119,9 +136,9 @@
                 name="libraries"
                 value="libraries"
               />
-              Libraries</label
+              <span>Libraries</span></label
             ><br />
-            <label class="checkbox" for="scenic"
+            <label class="checkbox"
               ><input
                 class="checkbox"
                 type="checkbox"
@@ -129,9 +146,9 @@
                 name="scenic"
                 value="scenic"
               />
-              Scenic</label
+              <span>Scenic</span></label
             ><br />
-            <label class="checkbox" for="skylines"
+            <label class="checkbox"
               ><input
                 class="checkbox"
                 type="checkbox"
@@ -139,9 +156,9 @@
                 name="skylines"
                 value="skylines"
               />
-              Skylines</label
+              <span>Skylines</span></label
             ><br />
-            <label class="checkbox" for="sports"
+            <label class="checkbox"
               ><input
                 class="checkbox"
                 type="checkbox"
@@ -149,31 +166,75 @@
                 name="sports"
                 value="sports"
               />
-              Sports</label
+              <span>Sports</span></label
             >
           </div>
           <!--weather settings go here-->
-          <div class="four columns" id="weather-settings"><label class="checkbox" for="weather"><input class="checkbox" type="checkbox" id="weather-check" name="weather" value="weather"/>
-            Show Weather</label>
-              <form class="citySearchForm">
-                <div class="row">
-                  <label for="citySearchBox">Search for a City</label> 
-                  <input type="text" placeholder="City Name" class="citySearchInput"/>
-                    <!-- <button>Submit</button> -->
-                </div>
-              </form>
+          <div class="four columns" id="weather-settings">
+            <label class="checkbox"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                id="weather-check"
+                name="weather"
+                value="weather"
+              />
+              <span>Show Weather</span></label
+              >
+            <form class="citySearchForm">
+              <div class="row">
+                <label for="citySearchBox">Search for a City
+                <input
+                  type="text"
+                  placeholder="City Name"
+                  class="citySearchInput"
+                />
+              </label>
+                <!-- <button>Submit</button> -->
+              </div>
+            </form>
           </div>
         </div>
         <div class="row">
           <!--sports settings go here-->
-          <div class="four columns" id="sports-settings"><label class="checkbox" for="weather"><input class="checkbox" type="checkbox" id="sports-check" name="sports" value="sports"/>
-            Show Sports</label></div>
-            <!--finance settings go here-->
-          <div class="four columns" id="finance-settings"><label class="checkbox" for="finance"><input class="checkbox" type="checkbox" id="finance-check" name="finance" value="finance"/>
-            Show Finance</label></div>
-            <!--news settings go here-->
-          <div class="four columns" id="news-settings"><label class="checkbox" for="news"><input class="checkbox" type="checkbox" id="news-check" name="news" value="news"/>
-            Show News</label></div>
+          <div class="four columns" id="sports-settings">
+            <label class="checkbox"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                id="sports-check"
+                name="sports"
+                value="sports"
+              />
+              <span>Show Sports</span></label
+            >
+          </div>
+          <!--finance settings go here-->
+          <div class="four columns" id="finance-settings">
+            <label class="checkbox"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                id="finance-check"
+                name="finance"
+                value="finance"
+              />
+             <span>Show Finance</span></label
+            >
+          </div>
+          <!--news settings go here-->
+          <div class="four columns" id="news-settings">
+            <label class="checkbox"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                id="news-check"
+                name="news"
+                value="news"
+              />
+              <span>Show News</span></label
+            >
+          </div>
         </div>
         <!--button hides settings menu and updates javascript files-->
         <button id="update-btn" class="btn">UPDATE</button>
@@ -208,23 +269,23 @@
         <!--weather widget row-->
         <div class="row weatherContainer center">
           <div class="dark rounded hidden row" id="weather">
-            <div class="three columns initialWeather" >
+            <div class="three columns initialWeather">
               <div class="w-citySearch">Weather</div>
-                <h5 class="w-weatherMain"></h5>
-                  <p class="w-weatherDes"></p>
+              <h5 class="w-weatherMain"></h5>
+              <p class="w-weatherDes"></p>
             </div>
-              <h1 class="three columns w-icons"></h1>
-                <div class="three columns">
-                  <h1 class="w-temp"></h1>
-                    <h6 class="w-maxAndMin"></h6>
-                </div>
-                  <div class="three columns extraInfo">
-                    <div>
-                      <p class="w-feelsLike"></p>
-                      <p class="w-moreInfo"></p>
-                      <p class="w-windSp"></p>
-                    </div>
-                  </div>
+            <h1 class="three columns w-icons"></h1>
+            <div class="three columns">
+              <h1 class="w-temp"></h1>
+              <h6 class="w-maxAndMin"></h6>
+            </div>
+            <div class="three columns extraInfo">
+              <div>
+                <p class="w-feelsLike"></p>
+                <p class="w-moreInfo"></p>
+                <p class="w-windSp"></p>
+              </div>
+            </div>
           </div>
         </div>
         <!--sports and finance widget row-->
@@ -239,34 +300,45 @@
         <!--news widget row-->
         <div class="row">
           <div class="dark rounded hidden" id="news">
-                News
-                <!-- news feed container -->
-              <div class="container-news">
-                <h4 class="center" style="margin-bottom: 20px;font-size: medium;">
-                  Today's Headline search Engine   
-                </h4>
-                <!-- form tag for news search section  -->
-                <form>
-                    <div class="input-field">
-                      <input type="text" id="searchquery">
-                      <label>Find what's happeing around the world.....</label>
-                    </div>
-                    <div class="row">
-                      <input type="submit" id="searchbtn" class="btn col m2 s12" value="search">
-                      <input type="reset" id="searchbtn" class="btn col m2 s12 red right" value="clear" style="margin-top:3px;">
-                    </div>
-                </form>
-                  <!-- loader UI display until news url return -->
-                <div id="loader" style="display: none;">
+            News
+            <!-- news feed container -->
+            <div class="container">
+              <h4 class="center" style="margin-bottom: 20px; font-size: medium">
+                Today's Headline search Engine
+              </h4>
+              <!-- form tag for news search section  -->
+              <form>
+                <div class="input-field">
+                  <input type="text" id="searchquery" />
+                  <label>Find what's happeing around the world.....</label>
+                </div>
+                <div class="row">
+                  <input
+                    type="submit"
+                    id="searchbtn"
+                    class="btn col m2 s12"
+                    value="search"
+                  />
+                  <input
+                    type="reset"
+                    id="searchbtn"
+                    class="btn col m2 s12 red right"
+                    value="clear"
+                    style="margin-top: 3px"
+                  />
+                </div>
+              </form>
+              <!-- loader UI display until news url return -->
+              <!-- <div id="loader" style="display: none;">
                     <div class="progress">
                       <div class="indeterminate"></div>
                     </div>
-                </div>
-                  <!-- section where ajax GET file displayed after for loop -->
-                <div class="row">
-                    <div id="newsResults"></div>
-                </div>
+                </div> -->
+              <!-- section where ajax GET file displayed after for loop -->
+              <div class="row">
+                <div id="newsResults"></div>
               </div>
+            </div>
           </div>
         </div>
         <!--background image credits required by unsplash-->
@@ -285,6 +357,5 @@
     <script src="assets\js\background.js"></script>
     <script src="assets\js\weather.js"></script>
     <script src="./assets/js/news.js"></script>
-
-</body>
+  </body>
 </html>

@@ -22,6 +22,16 @@ nav {
     color: #ffffff;
     /* width: 100%; */
 }
+.card-content{
+    color:black;
+    margin: 1;
+}
+.card-image{
+    max-height: 30%;
+}
+.card-action{
+    padding: 1;
+}
 /*general class used to center things*/
 .center {
     text-align: center;
@@ -128,8 +138,4 @@ p, h3, h1, h5, .weatherContainer div, h6{
    justify-content: center;
    height: 100px;
    width: 100px;
-}
-
-.container-news{
-    color: black;
 }
