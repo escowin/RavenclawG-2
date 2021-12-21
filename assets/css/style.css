@@ -129,7 +129,42 @@ p, h3, h1, h5, .weatherContainer div, h6{
    height: 100px;
    width: 100px;
 }
-
+/* news style */
 .container-news{
     color: black;
 }
+.card{
+    position: relative;
+    background: #fff;
+    max-width: 350px;
+    width: 350px;
+    margin: 20px;
+    border-radius: 2px;
+    box-shadow: 0 5px 25px rgb(1 1 1 / 10%);
+  }
+  .card-image{
+      max-height: 200px;
+      overflow: hidden;
+  }
+  .card-image img{
+    width: 100%;
+    max-height: auto;
+  }
+  .card-title{
+      position: relative;
+      color: #222;
+      padding: 20px;
+  }
+  .card-title h6{
+      font-weight: 1.4em;
+      font-weight: 700;
+  }
+  .card-medoaIcons a{
+      color:green;
+      font-size: 1.4em;
+      margin: 0 10px;
+      border-radius: 30%;
+      align-items: flex-end;
+  }
+  
+ 

@@ -12,9 +12,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- materialize fonts/css framework used in news section  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
    <!-- jQuery javaScript library  -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -235,32 +232,41 @@
           <div class="dark rounded hidden" id="news">
                 News
                 <!-- news feed container -->
-              <div class="container-news">
-                <h4 class="center" style="margin-bottom: 20px;font-size: medium;">
-                  Today's Headline search Engine   
-                </h4>
-                <!-- form tag for news search section  -->
-                <form>
-                    <div class="input-field">
-                      <input type="text" id="searchquery">
-                      <label>Find what's happeing around the world.....</label>
+                <div class="container">
+                  <h4 class="center">
+                    <span>Today's Headline Search Engine</span>
+                  </h4>
+                  <form>
+                    <div class="input-field" class="">
+                      <label
+                        ><input
+                          type="text"
+                          id="searchquery"
+                          class="u-full-width"
+                          placeholder="Find what's happeing around the world....."
+                        />
+                      </label>
                     </div>
                     <div class="row">
-                      <input type="submit" id="searchbtn" class="btn col m2 s12" value="search">
-                      <input type="reset" id="searchbtn" class="btn col m2 s12 red right" value="clear" style="margin-top:3px;">
+                      <input
+                        type="submit"
+                        id="searchbtn"
+                        class="button-primary u-pull-left"
+                        value="search"
+                      />
+                      <input
+                        type="reset"
+                        id="searchbtn"
+                        class="button-primary u-pull-right color: red;"
+                        value="clear"
+                      />
                     </div>
-                </form>
-                  <!-- loader UI display until news url return -->
-                <div id="loader" style="display: none;">
-                    <div class="progress">
-                      <div class="indeterminate"></div>
-                    </div>
+                  </form>
+                  <div class="container">
+                    <div class="row" id="newsResults"></div>
+                  </div>
                 </div>
-                  <!-- section where ajax GET file displayed after for loop -->
-                <div class="row">
-                    <div id="newsResults"></div>
-                </div>
-              </div>
+             
           </div>
         </div>
         <!--background image credits required by unsplash-->
@@ -280,8 +286,5 @@
     <script src="assets\js\background.js"></script>
     <script src="assets\js\weather.js"></script>
     <script src="./assets/js/news.js"></script>
-       <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
   </body>
 </html>
