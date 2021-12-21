@@ -80,9 +80,19 @@ nav {
 .searchBox {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .nbaBtn {
     margin-left: 20px;
+}
+.nbaPicture { 
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+}
+.container {
+    display:inline;
+    justify-content: center;
 }
 /*settings radio button styling*/
 .radio{
@@ -117,5 +127,11 @@ p, h3, h1 {
         top: 0;
         position: -webkit-sticky;
         position: sticky;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #playerPicture {
+        display: none;
     }
 }
