@@ -27,11 +27,11 @@ var getOpenWeatherData = function (city) {
 var citySubmitHandler = function (event) {
   event.preventDefault();
   var cityName = cityInputField.value.trim();
+  localStorage.setItem("citySearch", cityName);
   if (cityName) {
     getOpenWeatherData(cityName);
-  } else {
-    alert("Please enter a valid city.");
-  }
+  } 
+
 };
 
 // Submit Event for the City Search Form
@@ -42,7 +42,7 @@ var displayWeatherData = function (data) {
   console.log(data);
 
   citySearched.innerHTML = data.name;
-  localStorage.setItem("citySearch", data.name);
+  // localStorage.setItem("citySearch", data.name);
 
   weatherMain.innerHTML = data.weather[0].main;
   localStorage.setItem("currentWeather", data.weather[0].main);
@@ -53,18 +53,8 @@ var displayWeatherData = function (data) {
   currentTemp.innerHTML = Math.round(data.main.temp) + " °F";
   localStorage.setItem("currentTemp", Math.round(data.main.temp) + " °F");
 
-  tempRange.innerHTML =
-    Math.round(data.main.temp_max) +
-    " °F / " +
-    Math.round(data.main.temp_min) +
-    " °F";
-  localStorage.setItem(
-    "currentRange",
-    Math.round(data.main.temp_max) +
-      " °F / " +
-      Math.round(data.main.temp_min) +
-      " °F"
-  );
+  tempRange.innerHTML = Math.round(data.main.temp_max) + " °F / " + Math.round(data.main.temp_min) + " °F";
+  localStorage.setItem("currentRange", Math.round(data.main.temp_max) + " °F / " + Math.round(data.main.temp_min) + " °F");
 
   feelsLikeEl.innerHTML =
     "Feels Like: " + Math.round(data.main.feels_like) + " °F";
@@ -83,21 +73,17 @@ var displayWeatherData = function (data) {
 };
 
 //reload from local storage
-
-// let reloadWeather = function () {
-//   if (localStorage.getItem("citySearch") !== null) {
-//     //take citySearch and turn into full weather widget
-//     getOpenWeatherData();
-//     displayWeatherData();
-//     console.log("weather reload");
-//   } else {
-//     alert("Enter Valid info");
-//   }
-// };
-// reloadWeather();
+let reloadWeather = function () {
+  if (localStorage.getItem("citySearch") !== null) {
+    window.onload = function() {
+      citySubmitHandler(event);
+    };
+  }
+};
+reloadWeather();
 
 let storeCity = function () {
-  cityInputField.value = localStorage.getItem("City Search");
+  cityInputField.value = localStorage.getItem("citySearch");
   weatherMain.value = localStorage.getItem("currentWeather");
   weatherDescription.value = localStorage.getItem("currentDescription");
   currentTemp.value = localStorage.getItem("currentTemp");
