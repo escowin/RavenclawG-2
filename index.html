@@ -220,8 +220,24 @@
         </div>
         <!--sports and finance widget row-->
         <div class="row">
-          <div class="one-half column dark rounded hidden" id="sports">
-            Sports
+          <div class="one-half column dark rounded hidden" id="sports"> 
+            <div class="title">Search For Current NBA Player Stats</div>
+            <div class="searchBox">
+            <input type="text" name="nba" id="searchNBA" placeholder="Ex: Stephen Curry"/>
+            <button id="nba-btn" class="nbaBtn">Search</button>
+            </div>
+            <div class="container">
+              <p id="playerName"></p>
+              <p id="height"></p>
+              <p id="weight"></p>
+              <p id="position"></p>
+              <p id="team"></p>
+              <p id="assitspg"></p>
+              <p id="freeThrow"></p>
+              <p id="threePoint"></p>
+              <p id="ppg"></p>
+             <div id="playerPicture"></div>
+            </div>
           </div>
           <div class="one-half column dark rounded hidden" id="finance">
             Finance
@@ -278,7 +294,11 @@
         </div>
       </main>
     </div>
+<<<<<<< HEAD
 
+=======
+    <script src="assets/js/sports.js"></script>
+>>>>>>> f04fee726da3e6e6edb14394ed48af0882aa3c7d
     <script src="assets\js\background.js"></script>
     <script src="assets\js\weather.js"></script>
     <script src="./assets/js/news.js"></script>
