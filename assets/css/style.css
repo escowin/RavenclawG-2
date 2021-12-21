@@ -13,7 +13,7 @@ nav {
 } */
 /*styling for light mode*/
 .light {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
     color: #000000;
 }
 /*styling for dark mode*/
