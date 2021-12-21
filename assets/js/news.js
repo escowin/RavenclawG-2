@@ -9,10 +9,9 @@ $(document).ready(function () {
       "q=" +
       query +
       "" +
-      "&country=us&" +
-      "&token=701c1df87fadc3a6b806c86596655ba5";
+      "&token=701c1df87fadc3a6b806c86596655ba5&max=6&country=us";
 
-    if (query !== "" || "today") {
+    if (query !== "" ||"todays") {
       $.ajax({
         url: url,
         method: "GET",
@@ -32,48 +31,33 @@ $(document).ready(function () {
 
           for (var i in latestNews) {
             output += `
-  <div class="card">
-    <div class="card-image">
-      <img src="${latestNews[i].image}">
-    </div>
-    <div class="card-title row">
-      <h6 class="ten columns">${latestNews[i].title}</h6>
-    </div>
-    <div class="card-medoaIcons">
-      <a href="${latestNews[i].url}" target="_blank" class="button button-primary">Read</a>
-    </div>
-    </div>     
+                <div class="card one-third column">
+                <div class="card-image">
+                <img src="${latestNews[i].image}">
+                </div>
+                <div class="card-title row">
+                <h6 class="ten columns">${latestNews[i].title}</h6>
+                </div>
+                <div class="card-icons">
+                <a href="${latestNews[i].url}" target="_blank" class="button u-pull-right">Read</a>
+                </div>
+                </div>  
 			     `;
           }
 
           if (output !== "") {
             $("#newsResults").html(output);
-            M.toast({
-              html: "Here is the latest news!",
-              classes: "green rounded",
-            });
           } else {
             $("#newsResults").html(
               "There is 0 article available for this search"
             );
-            M.toast({
-              html: "There is 0 article available for this search",
-              classes: "red rounded",
-            });
           }
         },
-        error: function () {
-          M.toast({
-            html: "There is an error, please try again",
-            classes: "red rounded",
-          });
+        error: function () {$("#newsResults").html(
+          "There is an error, please try again"
+        );
         },
       });
-    } else {
-      M.toast({
-        html: "Please enter topic you're lookig for",
-        classes: "red rounded",
-      });
-    }
+    } 
   });
 });
