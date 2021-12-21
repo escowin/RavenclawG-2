@@ -7,7 +7,6 @@ var weightEl = document.querySelector('#weight');
 var positionEl = document.querySelector('#position');
 var teamEl = document.querySelector('#team');
 var playerPicture = document.querySelector('#playerPicture');
-const video = document.getElementById('video');
 var assitsPg = document.getElementById('assitspg');
 var freeThrowPer = document.getElementById('freeThrow');
 var threePointPer = document.getElementById('threePoint');
@@ -69,35 +68,17 @@ var getPlayerTwo = function(playerSearch) {
     })
 };
 
-var getPicture = function() {
-    var apiUrl = "https://nba-players.herokuapp.com/players/curry/stephen"
-    fetch(apiUrl)
-    .then(response => response.blob())
-    .then(images => {
-        outside = URL.createObjectURL(images)
-        console.log(images)
-    });
-};
-getPicture()
-// var getTeams = function (playerSearch) {
+// function to get a player picture .png
+// var getPicture = function() {
+//     var apiUrl = "https://nba-players.herokuapp.com/players/curry/stephen"
+//     fetch(apiUrl)
+//     .then(response => response.blob())
+//     .then(images => {
+//         outside = URL.createObjectURL(images)
+//         playerPicture.innerHTML = images
+//     });
+// };
+// getPicture()
 
-// }
-// // loops through data
-// for (i = 0; i < data.data.length; i++) {
-
-//     console.log(data.data[i].name)
-// }
-// data.data.forEach(function(team,index){
-//     console.log(team.name)
-// })
-// fetch("https://odds.p.rapidapi.com/v1/odds?sport=americanfootball_nfl&region=us&mkt=h2h&dateFormat=iso&oddsFormat=american", {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "odds.p.rapidapi.com",
-// 		"x-rapidapi-key": "5eac565ee1mshdb48ee068ef1a4cp1f16efjsnc8cb0faa0fc0"
-// 	}
-// })
-// .then(response => response.json())
-// .then(data => console.log(data))
-
+// adds a event listener to the buttonEl and says once this button is clicked run the player 
 buttonEl.addEventListener("click", playerSumbitHandler)
