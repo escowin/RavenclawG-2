@@ -73,7 +73,30 @@ nav {
 .btn:hover {
     background-color: #999999;
     color: #ffffff;
-    border; 1px solid #ff0000;
+    border: 1px solid #ff0000;
+}
+
+/* Sports Widget CSS */
+.title {
+    display: flex;
+    justify-content: center;
+}
+.searchBox {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.nbaBtn {
+    margin-left: 20px;
+}
+.nbaPicture { 
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+}
+.container {
+    display: flow-root;
+    
 }
 /*settings radio button styling*/
 .radio{
@@ -131,3 +154,8 @@ p, h3, h1, h5, .weatherContainer div, h6{
 }
 
 
+@media only screen and (max-width: 1000px) {
+    #playerPicture {
+        display: none;
+    }
+}
