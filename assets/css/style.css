@@ -71,8 +71,18 @@ nav {
     color: #ffffff;
     border: 1px solid #ff0000;
 }
-canvas {
-    position: absolute;
+
+/* Sports Widget CSS */
+.title {
+    display: flex;
+    justify-content: center;
+}
+.searchBox {
+    display: flex;
+    justify-content: center;
+}
+.nbaBtn {
+    margin-left: 20px;
 }
 /*settings radio button styling*/
 .radio{

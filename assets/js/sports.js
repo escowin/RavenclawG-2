@@ -1,5 +1,4 @@
-// gets all the players
-// var apiUrl = "https://www.balldontlie.io/api/v1/players?search=" 
+// Global variables
 var searchEl = document.querySelector('#searchNBA');
 var buttonEl = document.querySelector('#nba-btn');
 var dataEl = document.querySelector('#playerName');
@@ -13,7 +12,8 @@ var assitsPg = document.getElementById('assitspg');
 var freeThrowPer = document.getElementById('freeThrow');
 var threePointPer = document.getElementById('threePoint');
 var pointsPG = document.getElementById('ppg');
-
+ 
+// function tp handle when the user inputs a first and last name in the html input
 var playerSumbitHandler = function(event) {
     // prevent page from refreshing 
     event.preventDefault();
@@ -29,6 +29,11 @@ var playerSumbitHandler = function(event) {
         getPlayerTwo(playerSearch)
         // clear the old content
         searchEl.value = '';
+    
+    // if (searchEl.value !== getPlayer) {
+    //     alert('Sorry, no player found. Please try again! Hint: Full first & full last name')
+    // }
+    
     } else {
         alert('Please enter a player');
     }
@@ -49,8 +54,6 @@ var getPlayer = function(lastName, firstName) {
     })
 }
 
-
-
 var getPlayerTwo = function(playerSearch) {
     // format the Api
     var apiUrl = "https://www.balldontlie.io/api/v1/players?search=" + playerSearch
@@ -66,29 +69,16 @@ var getPlayerTwo = function(playerSearch) {
     })
 };
 
-fetch("https://livescore6.p.rapidapi.com/matches/v2/list-live?Category=soccer", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "livescore6.p.rapidapi.com",
-		"x-rapidapi-key": "5eac565ee1mshdb48ee068ef1a4cp1f16efjsnc8cb0faa0fc0"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.error(err);
-});
-// var getPicture = function() {
-//     var apiUrl = "https://nba-players.herokuapp.com/players/curry/stephen"
-//     fetch(apiUrl)
-//     .then(response => response.blob())
-//     .then(images => {
-//         outside = URL.createObjectURL(images)
-//         console.log(images)
-//     });
-// };
-// getPicture()
+var getPicture = function() {
+    var apiUrl = "https://nba-players.herokuapp.com/players/curry/stephen"
+    fetch(apiUrl)
+    .then(response => response.blob())
+    .then(images => {
+        outside = URL.createObjectURL(images)
+        console.log(images)
+    });
+};
+getPicture()
 // var getTeams = function (playerSearch) {
 
 // }
