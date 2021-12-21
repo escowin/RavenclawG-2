@@ -169,7 +169,7 @@ p, h3, h1, h5, .weatherContainer div, h6{
   .card:hover {
     background-color: #999999;
     color: #ffffff;
-    border; 1px solid #ff0000;
+    border: 1px solid #ff0000;
 }
   .card-image{
       max-height: 200px;

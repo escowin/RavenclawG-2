@@ -9,7 +9,7 @@ $(document).ready(function () {
       "q=" +
       query +
       "" +
-      "&token=701c1df87fadc3a6b806c86596655ba5&max=6&country=us";
+      "&token=2d2499655012ece242e8d5220e8f0422&max=6&country=us";
 
     if (query !== "" ||"todays") {
       $.ajax({
