@@ -49,6 +49,7 @@ var getPlayer = function(lastName, firstName) {
         freeThrowPer.innerHTML = " Free Throw Percentage: " + data.free_throw_percentage + "%"
         threePointPer.innerHTML = " 3pt Percentage: " + data.three_point_percentage + "%"
         pointsPG.innerHTML = " PPG: " + data.points_per_game
+        playerPicture.innerHTML = "<img src=https://nba-players.herokuapp.com/players/james/lebron/>"
 
     })
 }
@@ -68,17 +69,6 @@ var getPlayerTwo = function(playerSearch) {
     })
 };
 
-// function to get a player picture .png
-// var getPicture = function() {
-//     var apiUrl = "https://nba-players.herokuapp.com/players/curry/stephen"
-//     fetch(apiUrl)
-//     .then(response => response.blob())
-//     .then(images => {
-//         outside = URL.createObjectURL(images)
-//         playerPicture.innerHTML = images
-//     });
-// };
-// getPicture()
 
 // adds a event listener to the buttonEl and says once this button is clicked run the player 
 buttonEl.addEventListener("click", playerSumbitHandler)
