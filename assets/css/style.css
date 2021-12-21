@@ -99,7 +99,7 @@ checkbox{
     line-height: 1;
 }
 /*skeleton overrides for html element margins*/
-p, h3, h1, h5, .weatherContainer div, h6{
+p, h3, h1, h5, h6{
     margin: 0;
 }
 /*allows dark and light mode mobile icon coloring*/
@@ -110,6 +110,27 @@ p, h3, h1, h5, .weatherContainer div, h6{
 .light-txt{
     color: #000000;
 }
+
+
+/* Weather Widget */
+
+.w-Col1, .w-Col2, .w-Col3, .w-Col4 {
+    max-width: 20rem;
+    min-height: 10rem;
+}
+
+.w-Col3, .w-Col4 {
+    margin-top: 15px;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
+
+
+
+
 /*mobile setup*/
 @media screen and (max-width: 980px){
 /*show mobile nav*/
@@ -123,19 +144,3 @@ p, h3, h1, h5, .weatherContainer div, h6{
 
 
 
-/* Weather Widget */
-.weatherUl {
-    list-style-type: none;
-}
-
-.w-temp, .w-maxAndMin, .w-feelsLike, .w-moreInfo, .w-windSp, .w-citySearch, .w-weatherMain, .w-weatherDes {
-    display: flex;
-    justify-content: center;  
-}
-
-.w-icons {
-   display: flex;
-   justify-content: center;
-   height: 100px;
-   width: 100px;
-}
