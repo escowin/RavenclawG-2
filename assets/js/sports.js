@@ -34,7 +34,7 @@ var playerSumbitHandler = function(event) {
     // }
     
     } else {
-        alert('Please enter a player to search for stats');
+        alert('Please enter a player');
     }
 };
 
@@ -45,12 +45,12 @@ var getPlayer = function(lastName, firstName) {
     fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
-        assitsPg.innerHTML = " - Assists Per Game: " + data.assists_per_game
-        freeThrowPer.innerHTML = " - Free Throw Percentage: " + data.free_throw_percentage + "%"
-        threePointPer.innerHTML = " - 3pt Percentage: " + data.three_point_percentage + "%"
-        pointsPG.innerHTML = " - PPG: " + data.points_per_game
+        assitsPg.innerHTML = " Assists Per Game: " + data.assists_per_game
+        freeThrowPer.innerHTML = " Free Throw Percentage: " + data.free_throw_percentage + "%"
+        threePointPer.innerHTML = " 3pt Percentage: " + data.three_point_percentage + "%"
+        pointsPG.innerHTML = " PPG: " + data.points_per_game
         playerPicture.innerHTML = "<img src=\"https://nba-players.herokuapp.com/players/" + lastName + "/" + firstName + "\"/>"
-       
+
     })
 }
 
@@ -61,14 +61,22 @@ var getPlayerTwo = function(playerSearch) {
     fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
-        dataEl.innerHTML = " - Name: " + data.data[0].first_name + "  " + data.data[0].last_name;
-        heightEl.innerHTML = " - Height: " + data.data[0].height_feet + " feet ";
-        weightEl.innerHTML = " - Weight: " + data.data[0].height_inches + " inches ";
-        positionEl.innerHTML = " - Position: " + data.data[0].position;
-        teamEl.innerHTML = " - Team: " + data.data[0].team.city + " " + data.data[0].team.name;
+        dataEl.innerHTML = " Name: " + data.data[0].first_name + "  " + data.data[0].last_name;
+        heightEl.innerHTML = " Height: " + data.data[0].height_feet + " feet ";
+        weightEl.innerHTML = " Weight: " + data.data[0].height_inches + " inches ";
+        positionEl.innerHTML = " Position: " + data.data[0].position;
+        teamEl.innerHTML = " Team: " + data.data[0].team.city + " " + data.data[0].team.name;
     })
 };
-
+// fetch("https://odds.p.rapidapi.com/v1/odds?sport=americanfootball_nfl&region=us&mkt=totals&dateFormat=iso&oddsFormat=american", {
+// 	"method": "GET",
+// 	"headers": {
+// 		"x-rapidapi-host": "odds.p.rapidapi.com",
+// 		"x-rapidapi-key": "5eac565ee1mshdb48ee068ef1a4cp1f16efjsnc8cb0faa0fc0"
+// 	}
+// })
+// .then(response => response.json())
+// .then(data => console.log(data))
 
 // adds a event listener to the buttonEl and says once this button is clicked run the player 
 buttonEl.addEventListener("click", playerSumbitHandler)

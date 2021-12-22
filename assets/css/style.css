@@ -8,6 +8,9 @@ body {
 nav {
     display: none;
 }
+/* .weatherContainer {
+    width: 100%;
+} */
 /*styling for light mode*/
 .light {
     background-color: rgba(255,255,255,0.6);
@@ -17,6 +20,7 @@ nav {
 .dark {
     background-color: rgba(0, 0, 0, 0.6);
     color: #ffffff;
+    /* width: 100%; */
 }
 /*general class used to center things*/
 .center {
@@ -66,7 +70,7 @@ nav {
     border: 1px solid black;
 }
 /*general button hover styling*/
-.btn:hover .buttun:hover{
+.btn:hover .button:hover{
     background-color: #999999;
     color: #ffffff;
     border: 1px solid #ff0000;
@@ -108,7 +112,7 @@ nav {
     line-height: 1;
 }
 /*skeleton overrides for html element margins*/
-p, h3, h1, h5, h6{
+p, h3, h1, h5, .weatherContainer div, h6{
     margin: 0;
 }
 /*allows dark and light mode mobile icon coloring*/
@@ -119,6 +123,17 @@ p, h3, h1, h5, h6{
 .light-txt{
     color: #000000;
 }
+/*mobile setup*/
+@media screen and (max-width: 980px){
+/*show mobile nav*/
+    nav {
+        display: block;
+        top: 0;
+        position: -webkit-sticky;
+        position: sticky;
+    }
+}
+
 
 
 /* Weather Widget */
