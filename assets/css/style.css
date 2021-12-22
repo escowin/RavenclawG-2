@@ -90,7 +90,7 @@ nav {
     margin-left: 20px;
 }
 .nbaPicture { 
-    width: 50%;
+    width: 100%;
     height: auto;
     object-fit: contain;
 }
@@ -147,7 +147,7 @@ p, h3, h1, h5, .weatherContainer div, h6{
     margin-top: 15px;
 }
 
-img {
+.weather-icon   {
     height: 100px;
     width: 100px;
 }

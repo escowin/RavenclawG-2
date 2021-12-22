@@ -68,7 +68,7 @@ var displayWeatherData = function (data) {
 
   let weatherIcon = data.weather[0].icon;
   var iconUrl = "http://openweathermap.org/img/wn/" + weatherIcon + ".png";
-  iconDisplay.innerHTML = "<img src='http://openweathermap.org/img/w/" + weatherIcon + ".png' alt='Icon depicting current weather.'>";
+  iconDisplay.innerHTML = "<img src='http://openweathermap.org/img/w/" + weatherIcon + ".png' class='weather-icon' alt='Icon depicting current weather.'>"
   localStorage.setItem("icon", weatherIcon);
 };
 
