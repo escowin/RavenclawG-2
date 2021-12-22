@@ -12,6 +12,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+   <!-- jQuery javaScript library  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
     <script
       src="https://kit.fontawesome.com/2f70e28a2e.js"
       crossorigin="anonymous"
@@ -216,8 +220,24 @@
         </div>
         <!--sports and finance widget row-->
         <div class="row">
-          <div class="one-half column dark rounded hidden" id="sports">
-            Sports
+          <div class="one-half column dark rounded hidden" id="sports"> 
+            <div class="title">Search For Current NBA Player Stats</div>
+            <div class="searchBox">
+            <input type="text" name="nba" id="searchNBA" placeholder="Ex: Stephen Curry"/>
+            <button id="nba-btn" class="nbaBtn">Search</button>
+            </div>
+            <div class="container">
+              <p id="playerName"></p>
+              <p id="height"></p>
+              <p id="weight"></p>
+              <p id="position"></p>
+              <p id="team"></p>
+              <p id="assitspg"></p>
+              <p id="freeThrow"></p>
+              <p id="threePoint"></p>
+              <p id="ppg"></p>
+             <div id="playerPicture"></div>
+            </div>
           </div>
           <div class="one-half column dark rounded hidden" id="finance">
             Finance
@@ -226,7 +246,39 @@
         <!--news widget row-->
         <div class="row">
           <div class="dark rounded hidden" id="news">
-            News
+            
+                <!-- news feed container -->
+                  <h4 class="center">
+                    <span>Today's Headline News</span>
+                  </h4>
+                  <form>
+                    <div class="input-field">
+                      <label
+                        ><input
+                          type="text"
+                          id="searchquery"
+                          class="u-full-width"
+                          placeholder="Find what's happeing around the US....."
+                        />
+                      </label>
+                    </div>
+                    <div class="row">
+                      <input
+                        type="submit"
+                        id="searchbtn"
+                        class="button-primary u-pull-left"
+                        value="search"
+                      />
+                      <input
+                        type="reset"
+                        id="searchbtn"
+                        class="button-primary u-pull-right"
+                        value="clear"
+                      />
+                    </div>
+                  </form>
+                  <div class="row newsResults" id="newsResults">
+                  </div>             
           </div>
         </div>
         <!--background image credits required by unsplash-->
@@ -244,6 +296,6 @@
     </div>
     <script src="assets\js\background.js"></script>
     <script src="assets\js\weather.js"></script>
-
-</body>
+    <script src="./assets/js/news.js"></script>
+  </body>
 </html>
