@@ -13,7 +13,7 @@ nav {
 } */
 /*styling for light mode*/
 .light {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255,255,255,0.6);
     color: #000000;
 }
 /*styling for dark mode*/
@@ -70,7 +70,7 @@ nav {
     border: 1px solid black;
 }
 /*general button hover styling*/
-.btn:hover {
+.btn:hover .buttun:hover{
     background-color: #999999;
     color: #ffffff;
     border: 1px solid #ff0000;
@@ -152,6 +152,47 @@ p, h3, h1, h5, .weatherContainer div, h6{
    height: 100px;
    width: 100px;
 }
+/* news widget */
+.newsResults{
+    justify-content: space-between;
+ }
+ .card{
+    background: #fff;
+    min-height: 300px;
+    max-height: 300px;
+    overflow: auto;
+    margin: 10px;
+    border-radius: 2px;
+    box-shadow: 0 5px 25px rgb(1 1 1 / 10%);
+    justify-content: space-between;
+  } 
+  .card:hover {
+    background-color: #999999;
+    color: #ffffff;
+    border: 1px solid #ff0000;
+}
+  .card-image{
+      max-height: 200px;
+      overflow: hidden;
+  }
+  .card-image img{
+    width: 100%;
+    max-height: 30%;
+  }
+  .card-title{
+      color: #222;
+      padding: 10px;
+  }
+  .card-title h6{
+      font-weight: 1.4em;
+      font-weight: 700;
+  }
+  .card-icons a{
+      font-size: 1.4em;
+      border-radius: 50%;
+  }
+   
+ 
 
 
 @media only screen and (max-width: 1000px) {
