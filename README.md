@@ -22,6 +22,16 @@ The settings tab runs checks to make sure the user has specified their name, dar
 * balldontlie (sports info)
 * gnews (news info)
 
+##Contributers
+Cheyne Etie (Chewbakkah)
+https://github.com/Chewbakkah
+Cory (cmd0160)
+https://github.com/cmd0160
+Nick Garza (thenickgarza)
+https://github.com/thenickgarza
+Yohans (Yohans G)
+https://github.com/yohans14
+
 
 Live Link:
 https://chewbakkah.github.io/RavenclawG-2/
