@@ -15,14 +15,14 @@ The settings tab runs checks to make sure the user has specified their name, dar
 * Seleton CSS Framework
 * Javascript
 
-##APIs Used
+## APIs Used
 * Unsplash (background image provider)
 * OpenWeatherMap.Org (weather info)
 * herokuapp.com (sports info)
 * balldontlie (sports info)
 * gnews (news info)
 
-##Contributers
+## Contributers
 Cheyne Etie (Chewbakkah)
 https://github.com/Chewbakkah
 
