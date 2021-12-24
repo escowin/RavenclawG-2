@@ -26,7 +26,7 @@ The settings tab runs checks to make sure the user has specified their name, dar
 Cheyne Etie (Chewbakkah)
 https://github.com/Chewbakkah
 
-Cory (cmd0160)
+Cory Davis (cmd0160)
 https://github.com/cmd0160
 
 Nick Garza (thenickgarza)
