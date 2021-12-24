@@ -25,3 +25,4 @@ The settings tab runs checks to make sure the user has specified their name, dar
 
 Live Link:
 https://chewbakkah.github.io/RavenclawG-2/
+![ravenhome](https://user-images.githubusercontent.com/92648393/147315630-e53230ca-578c-42f0-ac6f-1117b81d2760.JPG)
