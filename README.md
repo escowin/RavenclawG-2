@@ -32,7 +32,7 @@ https://github.com/cmd0160
 Nick Garza (thenickgarza)
 https://github.com/thenickgarza
 
-Yohans (Yohans G)
+Yohans Getaneh (Yohans G)
 https://github.com/yohans14
 
 
