@@ -123,6 +123,7 @@ p, h3, h1, h5, .weatherContainer div, h6{
 .light-txt{
     color: #000000;
 }
+
 /*mobile setup*/
 @media screen and (max-width: 980px){
 /*show mobile nav*/
@@ -197,5 +198,19 @@ p, h3, h1, h5, .weatherContainer div, h6{
 @media only screen and (max-width: 1000px) {
     #playerPicture {
         display: none;
+    }
+    nav .three.columns {
+        width: 22%;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .four.columns {
+        width: 48%;
+    }
+    .columns {
+        margin-left: 0px;
+    }
+    nav .three.columns {
+        width: 22%;
     }
 }

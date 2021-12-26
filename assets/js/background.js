@@ -287,6 +287,7 @@ let loadName = function () {
 // showSettings allows the settings tab to be reloaded
 let showSettings = function (event) {
   event.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   loadChecks();
   darkVerifyEl.classList.add("hidden");
   nameVerifyEl.classList.add("hidden");

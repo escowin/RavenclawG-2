@@ -31,7 +31,7 @@
         <div class="row">
           <!--username for welcome box-->
           <div class="four columns" id="name-settings">
-            <form id="user-name-form" class="" name="username" method="POST">
+            <form id="user-name-form" class="form-input" name="username" method="POST">
               <div class="">
                 <label for="user-name">First Name</label>
                 <input
@@ -147,9 +147,10 @@
           <div class="four columns" id="weather-settings"><label class="checkbox" for="weather"><input class="checkbox" type="checkbox" id="weather-check" name="weather" value="weather"/>
             Show Weather</label>
               <form class="citySearchForm">
-                <div class="row">
+                <div class="row form-input">
                   <label for="citySearchBox">Search for a City</label> 
-                  <input type="text" placeholder="City Name" class="citySearchInput"/>
+                  <input type="text" placeholder="City Name" class="citySearchInput" input
+                  size="15"/>
                     <!-- <button>Submit</button> -->
                 </div>
               </form>
@@ -167,7 +168,7 @@
             Show News</label></div>
         </div>
         <!--button hides settings menu and updates javascript files-->
-        <button id="update-btn" class="btn">UPDATE</button>
+        <button id="update-btn" class="btn button-primary">UPDATE</button>
       </div>
       <!--navigation hidden unless mobile screen size used-->
       <nav class="row dark center rounded" id="nav">
@@ -229,7 +230,7 @@
             <div class="title">Search For Current NBA Player Stats</div>
             <div class="searchBox">
             <input type="text" name="nba" id="searchNBA" placeholder="Ex: Stephen Curry"/>
-            <button id="nba-btn" class="nbaBtn">Search</button>
+            <button id="nba-btn" class="nbaBtn button-primary">Search</button>
             </div>
             <div class="container">
               <p id="playerName"></p>
