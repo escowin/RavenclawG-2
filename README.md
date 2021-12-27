@@ -21,6 +21,7 @@ The settings tab runs checks to make sure the user has specified their name, dar
 * herokuapp.com (sports info)
 * balldontlie (sports info)
 * gnews (news info)
+* live coin watch (crypto currency)
 
 ## Contributers
 Cheyne Etie (Chewbakkah)
