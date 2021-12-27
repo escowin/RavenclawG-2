@@ -125,15 +125,15 @@ p, h3, h1, h5, .weatherContainer div, h6{
 }
 
 /*mobile setup*/
-@media screen and (max-width: 980px){
-/*show mobile nav*/
+/* @media screen and (max-width: 980px){
+
     nav {
         display: block;
         top: 0;
         position: -webkit-sticky;
         position: sticky;
     }
-}
+} */
 
 
 
@@ -154,7 +154,11 @@ p, h3, h1, h5, .weatherContainer div, h6{
 }
 /* news widget */
 .newsResults{
-    justify-content: space-between;
+    justify-content: space-around;
+    margin: auto;
+    display: inline-flex;
+    flex-wrap: wrap;
+
  }
  .card{
     background: #fff;
@@ -191,6 +195,24 @@ p, h3, h1, h5, .weatherContainer div, h6{
       font-size: 1.4em;
       border-radius: 50%;
   }
+  .fifty {
+      width: 45%;
+      display: inline-block;
+  }
+  .one-third.column {
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      align-items: center;
+      justify-content: center;
+  }
+  .equal {
+      display: flex;
+  }
+  .equal-height {
+      flex: 1;
+  }
    
  
 
@@ -199,18 +221,52 @@ p, h3, h1, h5, .weatherContainer div, h6{
     #playerPicture {
         display: none;
     }
+    nav {
+        display: block;
+        top: 0;
+        position: -webkit-sticky;
+        position: sticky;
+        z-index: 1;
+    }
     nav .three.columns {
         width: 22%;
     }
+    .newsResults {
+        justify-items: center;
+    }
+    .one-third.column {
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 10px;
+        margin-bottom: 10px;
 }
-@media only screen and (max-width: 700px) {
+}
+@media only screen and (max-width: 750px) {
+    .equal {
+        display: block;
+    }
     .four.columns {
         width: 48%;
+    }
+    .six.columns {
+        width: 100%;
     }
     .columns {
         margin-left: 0px;
     }
     nav .three.columns {
         width: 22%;
+    }
+    .margin-twenty{
+        margin-bottom: 20px;
+    }
+    .one-third.column {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        align-items: center;
+        justify-content: center;
+        width: 75%;
     }
 }
