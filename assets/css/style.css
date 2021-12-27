@@ -208,8 +208,20 @@ h6 {
 .tab {
   padding-left: 20px;
 }
-.lcw-logo {
+.lcw-center {
   display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+.lcw-logo {
+  justify-content: center;
+  justify-items: center;
+}
+.lcw-text{
+  padding-top: 10px;
+  text-align: center;
+}
+.lcw-content{
   justify-content: center;
   justify-items: center;
 }
@@ -219,14 +231,26 @@ h6 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 /* .image-name{
   justify-content: flex-start;
   align-items: center;
-}
-.crypto-info {
-  justify-content: flex-end;
 } */
+.crypto-info {
+  text-align: right;
+}
+.fifty-center {
+  flex: none;
+  margin: auto;
+  display: inline-block;
+  width: 60%;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+
+}
 
 @media only screen and (max-width: 1000px) {
   /* #playerPicture {

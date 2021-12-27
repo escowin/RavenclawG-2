@@ -12,15 +12,18 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-   <!-- jQuery javaScript library  -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+    <!-- jQuery javaScript library  -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
 
     <script
       src="https://kit.fontawesome.com/2f70e28a2e.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Raven Home</title>
   </head>
   <body>
@@ -31,7 +34,12 @@
         <div class="row">
           <!--username for welcome box-->
           <div class="four columns" id="name-settings">
-            <form id="user-name-form" class="form-input" name="username" method="POST">
+            <form
+              id="user-name-form"
+              class="form-input"
+              name="username"
+              method="POST"
+            >
               <div class="">
                 <label for="user-name">First Name</label>
                 <input
@@ -143,9 +151,46 @@
               Sports</label
             >
           </div>
+          <!--weather settings go here-->
+          <div class="four columns" id="weather-settings">
+            <label class="checkbox" for="weather"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                id="weather-check"
+                name="weather"
+                value="weather"
+              />
+              Show Weather</label
+            >
+            <form class="citySearchForm">
+              <div class="row form-input">
+                <label for="citySearchBox">Search for a City</label>
+                <input
+                  type="text"
+                  placeholder="City Name"
+                  class="citySearchInput"
+                  input
+                  size="15"
+                />
+                <!-- <button>Submit</button> -->
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row">
           <!--finance settings go here-->
-          <div class="four columns" id="finance-settings"><label class="checkbox" for="finance"><input class="checkbox" type="checkbox" id="finance-check" name="finance" value="finance"/>
-            Show Finance</label><br />
+          <div class="four columns" id="finance-settings">
+            <label class="checkbox" for="finance"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                id="finance-check"
+                name="finance"
+                value="finance"
+              />
+              Show Finance</label
+            ><br />
             <label class="checkbox tab" for="BTC"
               ><input
                 class="checkbox"
@@ -157,70 +202,75 @@
               Bitcoin</label
             ><br />
             <label class="checkbox tab" for="ETH"
-            ><input
-              class="checkbox"
-              type="checkbox"
-              id="ETH-Check"
-              name="ETH"
-              value="ETH"
-            />
-            Ethereum</label
-          ><br />
-          <label class="checkbox tab" for="DOGE"
-            ><input
-              class="checkbox"
-              type="checkbox"
-              id="DOGE-Check"
-              name="DOGE"
-              value="DOGE"
-            />
-            Dogecoin</label><br />
-          <label class="checkbox tab" for="SHIB"
-            ><input
-              class="checkbox"
-              type="checkbox"
-              id="SHIB-Check"
-              name="SHIB"
-              value="SHIB"
-            />
-            Shiba Inu</label>
-          <br />
-          <label class="checkbox tab" for="LTC"
-            ><input
-              class="checkbox"
-              type="checkbox"
-              id="LTC-Check"
-              name="LTC"
-              value="LTC"
-            />
-            Litecoin</label>
-          
-          
-          
-          
-          
+              ><input
+                class="checkbox"
+                type="checkbox"
+                id="ETH-Check"
+                name="ETH"
+                value="ETH"
+              />
+              Ethereum</label
+            ><br />
+            <label class="checkbox tab" for="DOGE"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                id="DOGE-Check"
+                name="DOGE"
+                value="DOGE"
+              />
+              Dogecoin</label
+            ><br />
+            <label class="checkbox tab" for="SHIB"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                id="SHIB-Check"
+                name="SHIB"
+                value="SHIB"
+              />
+              Shiba Inu</label
+            >
+            <br />
+            <label class="checkbox tab" for="LTC"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                id="LTC-Check"
+                name="LTC"
+                value="LTC"
+              />
+              Litecoin</label
+            >
           </div>
-        </div>
-        <div class="row">
-          <!--weather settings go here-->
-          <div class="four columns" id="weather-settings"><label class="checkbox" for="weather"><input class="checkbox" type="checkbox" id="weather-check" name="weather" value="weather"/>
-            Show Weather</label>
-              <form class="citySearchForm">
-                <div class="row form-input">
-                  <label for="citySearchBox">Search for a City</label> 
-                  <input type="text" placeholder="City Name" class="citySearchInput" input
-                  size="15"/>
-                    <!-- <button>Submit</button> -->
-                </div>
-              </form>
-          </div>
+          
           <!--sports settings go here-->
-          <div class="four columns" id="sports-settings"><label class="checkbox" for="weather"><input class="checkbox" type="checkbox" id="sports-check" name="sports" value="sports"/>
-            Show Sports</label></div>
-            
-            <!--news settings go here-->
-          <div class="four columns" id="news-settings"><label class="checkbox" for="news"><input class="checkbox" type="checkbox" id="news-check" name="news" value="news"/>
-            Show News</label></div>
+          <div class="four columns" id="sports-settings">
+            <label class="checkbox" for="weather"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                id="sports-check"
+                name="sports"
+                value="sports"
+              />
+              Show Sports</label
+            >
+          </div>
+
+          <!--news settings go here-->
+          <div class="four columns" id="news-settings">
+            <label class="checkbox" for="news"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                id="news-check"
+                name="news"
+                value="news"
+              />
+              Show News</label
+            >
+          </div>
         </div>
         <!--button hides settings menu and updates javascript files-->
         <button id="update-btn" class="btn button-primary">UPDATE</button>
@@ -254,37 +304,45 @@
         </div>
 
         <!--weather widget row-->
-      <div class="center dark rounded hidden row" id="weather">
-        <div class="six columns">
-          <div class="fifty center">
-            <h3 class="w-citySearch"></h3>
-             <h5 class="w-weatherMain"></h5>
-                <p class="w-weatherDes"></p>
-         </div>
-         <div class="fifty center">
-          <div class="w-icons"></div>
-        </div>
-        </div>
-        <div class="six columns">
-          <div class="fifty">
-            <h1 class="w-temp"></h1>
-             <h6 class="w-maxAndMin"></h6>
-         </div>
-         <div class="fifty">
-          <p class="w-feelsLike"></p>
-            <p class="w-moreInfo"></p>
+        <div class="center dark rounded hidden row" id="weather">
+          <div class="six columns">
+            <div class="fifty center">
+              <h3 class="w-citySearch"></h3>
+              <h5 class="w-weatherMain"></h5>
+              <p class="w-weatherDes"></p>
+            </div>
+            <div class="fifty center">
+              <div class="w-icons"></div>
+            </div>
+          </div>
+          <div class="six columns">
+            <div class="fifty">
+              <h1 class="w-temp"></h1>
+              <h6 class="w-maxAndMin"></h6>
+            </div>
+            <div class="fifty">
+              <p class="w-feelsLike"></p>
+              <p class="w-moreInfo"></p>
               <p class="w-windSp"></p>
-         </div>
+            </div>
+          </div>
         </div>
-      </div>
 
         <!--sports and finance widget row-->
         <div class="row equal">
-          <div class="six columns dark rounded hidden margin-twenty equal-height" id="sports"> 
+          <div
+            class="six columns dark rounded hidden margin-twenty equal-height"
+            id="sports"
+          >
             <div class="title">Search For Current NBA Player Stats</div>
             <div class="searchBox">
-            <input type="text" name="nba" id="searchNBA" placeholder="Ex: Stephen Curry"/>
-            <button id="nba-btn" class="nbaBtn button-primary">Search</button>
+              <input
+                type="text"
+                name="nba"
+                id="searchNBA"
+                placeholder="Ex: Stephen Curry"
+              />
+              <button id="nba-btn" class="nbaBtn button-primary">Search</button>
             </div>
             <div class="container">
               <p id="playerName"></p>
@@ -296,51 +354,57 @@
               <p id="freeThrow"></p>
               <p id="threePoint"></p>
               <p id="ppg"></p>
-             <div id="playerPicture"></div>
+              <div id="playerPicture"></div>
             </div>
           </div>
-          <div class="six columns dark rounded hidden equal-height" id="finance">
-            <div class="lcw-logo"><img src="assets\images\LCW-logo.png" width="90%" /></div>
+          <div
+            class="six columns dark rounded hidden equal-height"
+            id="finance"
+          >
+            <div class="lcw-logo">
+              <a href="https://www.livecoinwatch.com/"
+                ><img src="assets\images\LCW-logo.png" width="90%"
+              /></a>
+            </div>
             <div class="lcw-content" id="lcw-content"></div>
+            <div class="lcw-text">Click Logos For More Info</div>
             <!-- <div class="livecoinwatch-widget-3" lcw-base="USD" lcw-d-head="true" lcw-d-name="true" lcw-d-code="true" lcw-d-icon="true" lcw-color-tx="#ffffff" lcw-color-bg="#1f2434" lcw-border-w="1" ></div> -->
           </div>
         </div>
         <!--news widget row-->
         <div class="row">
           <div class="dark rounded hidden" id="news">
-            
-                <!-- news feed container -->
-                  <h4 class="center">
-                    <span>Today's Headline News</span>
-                  </h4>
-                  <form>
-                    <div class="input-field">
-                      <label
-                        ><input
-                          type="text"
-                          id="searchquery"
-                          class="u-full-width"
-                          placeholder="Find what's happeing around the US....."
-                        />
-                      </label>
-                    </div>
-                    <div class="row">
-                      <input
-                        type="submit"
-                        id="searchbtn"
-                        class="button-primary u-pull-left"
-                        value="search"
-                      />
-                      <input
-                        type="reset"
-                        id="searchbtn"
-                        class="button-primary u-pull-right"
-                        value="clear"
-                      />
-                    </div>
-                  </form>
-                  <div class="row newsResults" id="newsResults">
-                  </div>             
+            <!-- news feed container -->
+            <h4 class="center">
+              <span>Today's Headline News</span>
+            </h4>
+            <form>
+              <div class="input-field">
+                <label
+                  ><input
+                    type="text"
+                    id="searchquery"
+                    class="u-full-width"
+                    placeholder="Find what's happeing around the US....."
+                  />
+                </label>
+              </div>
+              <div class="row">
+                <input
+                  type="submit"
+                  id="searchbtn"
+                  class="button-primary u-pull-left"
+                  value="search"
+                />
+                <input
+                  type="reset"
+                  id="searchbtn"
+                  class="button-primary u-pull-right"
+                  value="clear"
+                />
+              </div>
+            </form>
+            <div class="row newsResults" id="newsResults"></div>
           </div>
         </div>
         <!--background image credits required by unsplash-->
