@@ -193,7 +193,7 @@ let populateCryptoInfo = function(){
     cryptoMain.className = "cryptoMain";
     let cryptoName = document.createElement("div");
     cryptoName.className = "image-name";
-    cryptoName.innerHTML = "<a href=\"" + cryptoType[i].link + "\"><img style=\"vertical-align:middle\" src=\"" + cryptoType[i].icon + "\"/></a>" + " <b>" + cryptoType[i].name + "</b>";
+    cryptoName.innerHTML = "<a href=\"" + cryptoType[i].link + "\" target=\"_blank\"><img style=\"vertical-align:middle\" src=\"" + cryptoType[i].icon + "\" /></a>" + " <b>" + cryptoType[i].name + "</b>";
     let cryptoInfo = document.createElement("div");
     cryptoInfo.className = "crypto-info";
     cryptoInfo.innerHTML = "Current: " + cryptoType[i].rate + "<br /> High: " + cryptoType[i].high;
