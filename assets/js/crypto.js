@@ -1,5 +1,6 @@
 const cryptoEndpoint = "2e362a85-d8e1-40aa-bb14-c6585ac5d249";
 const liveCoinWatchLink = "https://www.livecoinwatch.com/";
+let cryptoType = [];
 const cryptoETH = {
   name: "",
   icon: "",
@@ -35,7 +36,7 @@ const cryptoLTC = {
   high: "",
   link: "https://www.livecoinwatch.com/price/Litecoin-LTC",
 };
-let cryptoETHcall = function () {
+
   fetch(new Request("https://api.livecoinwatch.com/coins/single"), {
     method: "POST",
     headers: new Headers({
@@ -52,14 +53,12 @@ let cryptoETHcall = function () {
       return response.json();
     })
     .then(function (jsonData) {
-      console.log(jsonData);
       cryptoETH.name = jsonData.name;
       cryptoETH.icon = jsonData.png32;
       cryptoETH.rate = jsonData.rate;
       cryptoETH.high = jsonData.allTimeHighUSD;
     });
-};
-let cryptoBTCcall = function () {
+
   fetch(new Request("https://api.livecoinwatch.com/coins/single"), {
     method: "POST",
     headers: new Headers({
@@ -76,14 +75,12 @@ let cryptoBTCcall = function () {
       return response.json();
     })
     .then(function (jsonData) {
-      console.log(jsonData);
       cryptoBTC.name = jsonData.name;
       cryptoBTC.icon = jsonData.png32;
       cryptoBTC.rate = jsonData.rate;
       cryptoBTC.high = jsonData.allTimeHighUSD;
     });
-};
-let cryptoSHIBcall = function () {
+
   fetch(new Request("https://api.livecoinwatch.com/coins/single"), {
     method: "POST",
     headers: new Headers({
@@ -100,14 +97,12 @@ let cryptoSHIBcall = function () {
       return response.json();
     })
     .then(function (jsonData) {
-      console.log(jsonData);
       cryptoSHIB.name = jsonData.name;
       cryptoSHIB.icon = jsonData.png32;
       cryptoSHIB.rate = jsonData.rate;
       cryptoSHIB.high = jsonData.allTimeHighUSD;
     });
-};
-let cryptoDOGEcall = function () {
+
   fetch(new Request("https://api.livecoinwatch.com/coins/single"), {
     method: "POST",
     headers: new Headers({
@@ -124,14 +119,13 @@ let cryptoDOGEcall = function () {
       return response.json();
     })
     .then(function (jsonData) {
-      console.log(jsonData);
       cryptoDOGE.name = jsonData.name;
       cryptoDOGE.icon = jsonData.png32;
       cryptoDOGE.rate = jsonData.rate;
       cryptoDOGE.high = jsonData.allTimeHighUSD;
     });
-};
-let cryptoLTCcall = function () {
+
+
     fetch(new Request("https://api.livecoinwatch.com/coins/single"), {
       method: "POST",
       headers: new Headers({
@@ -148,12 +142,93 @@ let cryptoLTCcall = function () {
         return response.json();
       })
       .then(function (jsonData) {
-        console.log(jsonData);
         cryptoLTC.name = jsonData.name;
         cryptoLTC.icon = jsonData.png32;
         cryptoLTC.rate = jsonData.rate;
         cryptoLTC.high = jsonData.allTimeHighUSD;
       });
-  };
 
-cryptoETHcall();
+let showFinanceEL = document.querySelector("#finance-check");
+let btcCheckEl = document.querySelector("#BTC-Check");
+let ethCheckEl = document.querySelector("#ETH-Check");
+let dogeCheckEl = document.querySelector("#DOGE-Check");
+let shibCheckEl = document.querySelector("#SHIB-Check");
+let ltcCheckEl = document.querySelector("#LTC-Check");
+let updateEl = document.querySelector("#update-btn");
+let contentEl = localStorage.querySelector("#lcw-content");
+let checkFinance = localStorage.getItem("financeEl");
+
+let restoreChecks = function(){
+    let checkFinance = localStorage.getItem("financeEl");
+    let checkBTC = localStorage.getItem("BTC");
+    let checkETH = localStorage.getItem("ETH");
+    let checkDOGE = localStorage.getItem("DOGE");
+    let checkSHIB = localStorage.getItem("SHIB");
+    let checkLTC = localStorage.getItem("LTC");
+    if(checkFinance == "true"){
+        showFinanceEL.checked = true;
+    }
+    if(checkBTC == "true"){
+        btcCheckEl.checked = true;
+    }
+    if(checkETH == "true"){
+        ethCheckEl.checked = true;
+    }
+    if(checkDOGE == "true"){
+        dogeCheckEl.checked = true;
+    }
+    if(checkSHIB == "true"){
+        shibCheckEl.checked = true;
+    }
+    if(checkLTC == "true"){
+        ltcCheckEl.checked = true;
+    }
+}
+let populateCryptoInfo = function(){
+    contentEl.innerHTML = "";
+    for (i=0; i < cryptoType.length; i++){
+    console.log("ding");
+    }
+};
+let checkCryptoType = function(){
+    if(btcCheckEl.checked === true){
+        cryptoType.push(cryptoBTC);
+        localStorage.setItem("BTC", "true");
+    }else{
+        localStorage.setItem("BTC", "false");
+    }
+    if(ethCheckEl.checked === true){
+        cryptoType.push(cryptoETH);
+        localStorage.setItem("ETH", "true");
+    }else{
+        localStorage.setItem("ETH", "false");
+    }
+    if(dogeCheckEl.checked === true){
+        cryptoType.push(cryptoDOGE);
+        localStorage.setItem("DOGE", "true");
+    }else{
+        localStorage.setItem("DOGE", "false");
+    }
+    if(shibCheckEl.checked === true){
+        cryptoType.push(cryptoSHIB);
+        localStorage.setItem("SHIB", "true");
+    }else{
+        localStorage.setItem("SHIB", "false");
+    }
+    if(ltcCheckEl.checked === true){
+        cryptoType.push(cryptoLTC);
+        localStorage.setItem("LTC", "true");
+    }else{
+        localStorage.setItem("LTC", "false");
+    }
+    populateCryptoInfo();
+}
+let checkRun = function(){
+    if(showFinanceEL.checked === true){
+        cryptoType = [];
+        checkCryptoType();
+    }
+}
+restoreChecks();
+checkRun();
+updateEl.addEventListener("click", checkRun);
