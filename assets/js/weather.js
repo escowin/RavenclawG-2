@@ -39,7 +39,6 @@ weatherUpdateEl.addEventListener("click", citySubmitHandler);
 
 // Displays data on the page
 var displayWeatherData = function (data) {
-  console.log(data);
 
   citySearched.innerHTML = data.name;
   // localStorage.setItem("citySearch", data.name);
