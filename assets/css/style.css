@@ -214,6 +214,20 @@ h6 {
   justify-items: center;
 }
 
+.cryptoMain{
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* .image-name{
+  justify-content: flex-start;
+  align-items: center;
+}
+.crypto-info {
+  justify-content: flex-end;
+} */
+
 @media only screen and (max-width: 1000px) {
   /* #playerPicture {
     display: none;

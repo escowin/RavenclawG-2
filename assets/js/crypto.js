@@ -155,7 +155,7 @@ let dogeCheckEl = document.querySelector("#DOGE-Check");
 let shibCheckEl = document.querySelector("#SHIB-Check");
 let ltcCheckEl = document.querySelector("#LTC-Check");
 let updateEl = document.querySelector("#update-btn");
-let contentEl = localStorage.querySelector("#lcw-content");
+let contentEl = document.querySelector("#lcw-content");
 let checkFinance = localStorage.getItem("financeEl");
 
 let restoreChecks = function(){
@@ -185,37 +185,51 @@ let restoreChecks = function(){
     }
 }
 let populateCryptoInfo = function(){
+    console.log("also ran");
+    console.log(cryptoType);
     contentEl.innerHTML = "";
     for (i=0; i < cryptoType.length; i++){
-    console.log("ding");
+    let cryptoMain = document.createElement("div");
+    cryptoMain.className = "cryptoMain";
+    let cryptoName = document.createElement("div");
+    cryptoName.className = "image-name";
+    cryptoName.innerHTML = "<img src=\"" + cryptoType[i].icon + "\"/>" + " <b>" + cryptoType[i].name + "</b>";
+    let cryptoInfo = document.createElement("div");
+    cryptoInfo.className = "crypto-info";
+    cryptoInfo.innerHTML = cryptoType[i].rate;
+    cryptoMain.appendChild(cryptoName);
+    cryptoMain.appendChild(cryptoInfo);
+    contentEl.appendChild(cryptoMain);
     }
+    console.log("finish");
 };
 let checkCryptoType = function(){
-    if(btcCheckEl.checked === true){
+    console.log("ran");
+    if(btcCheckEl.checked == true){
         cryptoType.push(cryptoBTC);
         localStorage.setItem("BTC", "true");
     }else{
         localStorage.setItem("BTC", "false");
     }
-    if(ethCheckEl.checked === true){
+    if(ethCheckEl.checked == true){
         cryptoType.push(cryptoETH);
         localStorage.setItem("ETH", "true");
     }else{
         localStorage.setItem("ETH", "false");
     }
-    if(dogeCheckEl.checked === true){
+    if(dogeCheckEl.checked == true){
         cryptoType.push(cryptoDOGE);
         localStorage.setItem("DOGE", "true");
     }else{
         localStorage.setItem("DOGE", "false");
     }
-    if(shibCheckEl.checked === true){
+    if(shibCheckEl.checked == true){
         cryptoType.push(cryptoSHIB);
         localStorage.setItem("SHIB", "true");
     }else{
         localStorage.setItem("SHIB", "false");
     }
-    if(ltcCheckEl.checked === true){
+    if(ltcCheckEl.checked == true){
         cryptoType.push(cryptoLTC);
         localStorage.setItem("LTC", "true");
     }else{
@@ -223,12 +237,20 @@ let checkCryptoType = function(){
     }
     populateCryptoInfo();
 }
-let checkRun = function(){
-    if(showFinanceEL.checked === true){
-        cryptoType = [];
+let checkAPI = function(){
+    if (cryptoLTC.name !== ""){
         checkCryptoType();
+    }else{
+        setTimeout(checkAPI, 1000);
     }
 }
-restoreChecks();
+let checkRun = function(){
+    restoreChecks();
+    if(showFinanceEL.checked == true){
+        cryptoType = [];
+        checkAPI();
+    }
+}
+
 checkRun();
 updateEl.addEventListener("click", checkRun);
