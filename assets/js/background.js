@@ -99,6 +99,7 @@ let loadChecks = function () {
 };
 // hideElements is used to hide and unhide widgets from main page
 let hideElements = function () {
+  console.log("help");
   if (weatherCheckEl.checked === true) {
     weatherEl.classList.remove("hidden");
     localStorage.setItem("weatherEl", "true");
@@ -108,6 +109,9 @@ let hideElements = function () {
   }
   if (sportsCheckEl.checked === true) {
     sportsEl.classList.remove("hidden");
+    sportsEl.classList.add("six");
+    sportsEl.classList.add("columns");
+    sportsEl.classList.remove("fifty-center");
     localStorage.setItem("sportsEl", "true");
   } else {
     sportsEl.classList.add("hidden");
@@ -115,11 +119,13 @@ let hideElements = function () {
   }
   if (financeCheckEl.checked === true) {
     financeEl.classList.remove("hidden");
+    financeEl.classList.add("six");
+    financeEl.classList.add("columns");
+    financeEl.classList.remove("fifty-center");
     localStorage.setItem("financeEl", "true");
   } else {
     financeEl.classList.add("hidden");
     localStorage.setItem("financeEl", "false");
-    4;
   }
   if (newsCheckEl.checked === true) {
     newsEl.classList.remove("hidden");
@@ -127,6 +133,17 @@ let hideElements = function () {
   } else {
     newsEl.classList.add("hidden");
     localStorage.setItem("newsEl", "false");
+  }
+  if (financeCheckEl.checked === true && sportsCheckEl.checked !== true){
+    console.log("true");
+    financeEl.classList.remove("six");
+    financeEl.classList.remove("columns");
+    financeEl.classList.add("fifty-center");
+  }
+  if (sportsCheckEl.checked === true && financeCheckEl.checked !== true){
+    sportsEl.classList.remove("six");
+    sportsEl.classList.remove("columns");
+    sportsEl.classList.add("fifty-center");
   }
 };
 // checkImages takes input from background settings window and sets the type of background images to be loaded it also stores this info in local storage
@@ -287,6 +304,7 @@ let loadName = function () {
 // showSettings allows the settings tab to be reloaded
 let showSettings = function (event) {
   event.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   loadChecks();
   darkVerifyEl.classList.add("hidden");
   nameVerifyEl.classList.add("hidden");

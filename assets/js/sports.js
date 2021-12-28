@@ -49,7 +49,7 @@ var getPlayer = function(lastName, firstName) {
         freeThrowPer.innerHTML = " - Free Throw Percentage: " + data.free_throw_percentage + "%"
         threePointPer.innerHTML = " - 3pt Percentage: " + data.three_point_percentage + "%"
         pointsPG.innerHTML = " - PPG: " + data.points_per_game
-        playerPicture.innerHTML = "<img src=\"https://nba-players.herokuapp.com/players/" + lastName + "/" + firstName + "\"/>"
+        playerPicture.innerHTML = "<img src=\"https://nba-players.herokuapp.com/players/" + lastName + "/" + firstName + "\" width=\"90%\" />"
 
     })
 }
