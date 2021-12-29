@@ -1,202 +1,307 @@
 /*main body styling*/
 body {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
 }
 /*nav is hidden by default for desktop*/
 nav {
-    display: none;
+  display: none;
 }
-/* .weatherContainer {
-    width: 100%;
-} */
+
 /*styling for light mode*/
 .light {
-    background-color: rgba(255,255,255,0.6);
-    color: #000000;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #000000;
 }
 /*styling for dark mode*/
 .dark {
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #ffffff;
-    /* width: 100%; */
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  /* width: 100%; */
 }
 /*general class used to center things*/
 .center {
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 /*aligns bottom credits as far bottom as possible*/
 .bottom-credit {
-    bottom: 0px;
+  bottom: 0px;
 }
 /*styles link in bottom credits*/
 .bottom-credit a {
-    text-decoration: none;
-    font-weight: bold;
-    color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  color: inherit;
 }
 /*used to round the widget windows*/
 .rounded {
-    border-radius: 10px;
-    padding: 10px;
+  border-radius: 10px;
+  padding: 10px;
 }
 /*general class used to show and hide things*/
 .hidden {
-    display: none;
+  display: none;
 }
 /*styling for the settings window*/
-.settings{
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #ffffff;
-    top: 0px;
+.settings {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  top: 0px;
 }
 /*overrides skeleton's default margins*/
 .row {
-    margin: 20px;
+  margin: 20px;
 }
 /*text styling for error messages in settings tab*/
 .name-verify {
-    color: #ff0000;
-    font-weight: bold;
+  color: #ff0000;
+  font-weight: bold;
 }
 /*general button styling*/
 .btn {
-    background-color: #666666;
-    color: #000000;
-    border: 1px solid black;
+  background-color: #666666;
+  color: #000000;
+  border: 1px solid black;
 }
 /*general button hover styling*/
-.btn:hover .buttun:hover{
-    background-color: #999999;
-    color: #ffffff;
-    border: 1px solid #ff0000;
+.btn:hover .button:hover {
+  background-color: #999999;
+  color: #ffffff;
+  border: 1px solid #ff0000;
 }
 
 /* Sports Widget CSS */
 .title {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .searchBox {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .nbaBtn {
-    margin-left: 20px;
+  margin-left: 20px;
 }
-.nbaPicture { 
-    width: 50%;
-    height: auto;
-    object-fit: contain;
+.playerPicture {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 .container {
-    display: flow-root;
-    
+  display: flow-root;
 }
 /*settings radio button styling*/
-.radio{
-    display: inline-block;
-    float: left;
-    white-space: nowrap;
+.radio {
+  display: inline-block;
+  float: left;
+  white-space: nowrap;
 }
 /*settings checkbox styling*/
-.checkbox{
-    display: inline-block;    
-    white-space: nowrap;
-    margin-bottom: 0;
-    line-height: 1;
+.checkbox {
+  display: inline-block;
+  white-space: nowrap;
+  margin-bottom: 0;
+  line-height: 1;
 }
 /*skeleton overrides for html element margins*/
-p, h3, h1, h5, .weatherContainer div, h6{
-    margin: 0;
+p,
+h3,
+h1,
+h5,
+.weatherContainer div,
+h6 {
+  margin: 0;
 }
 /*allows dark and light mode mobile icon coloring*/
-.dark-txt{
-    color: #ffffff;
+.dark-txt {
+  color: #ffffff;
 }
 /*allows dark and light mode mobile icon coloring*/
-.light-txt{
-    color: #000000;
+.light-txt {
+  color: #000000;
 }
-/*mobile setup*/
-@media screen and (max-width: 980px){
-/*show mobile nav*/
-    nav {
-        display: block;
-        top: 0;
-        position: -webkit-sticky;
-        position: sticky;
-    }
-}
-
-
 
 /* Weather Widget */
-.weatherUl {
-    list-style-type: none;
+
+.w-Col1,
+.w-Col2,
+.w-Col3,
+.w-Col4 {
+  max-width: 20rem;
+  min-height: 10rem;
 }
 
-.w-temp, .w-maxAndMin, .w-feelsLike, .w-moreInfo, .w-windSp, .w-citySearch, .w-weatherMain, .w-weatherDes {
-    display: flex;
-    justify-content: center;  
+.w-Col3,
+.w-Col4 {
+  margin-top: 15px;
 }
 
-.w-icons {
-   display: flex;
-   justify-content: center;
-   height: 100px;
-   width: 100px;
+.weather-icon {
+  height: 100px;
+  width: 100px;
 }
 /* news widget */
-.newsResults{
-    justify-content: space-between;
- }
- .card{
-    background: #fff;
-    min-height: 300px;
-    max-height: 300px;
-    overflow: auto;
-    margin: 10px;
-    border-radius: 2px;
-    box-shadow: 0 5px 25px rgb(1 1 1 / 10%);
-    justify-content: space-between;
-  } 
-  .card:hover {
-    background-color: #999999;
-    color: #ffffff;
-    border: 1px solid #ff0000;
+.newsResults {
+  justify-content: space-around;
+  margin: auto;
+  display: inline-flex;
+  flex-wrap: wrap;
 }
-  .card-image{
-      max-height: 200px;
-      overflow: hidden;
-  }
-  .card-image img{
-    width: 100%;
-    max-height: 30%;
-  }
-  .card-title{
-      color: #222;
-      padding: 10px;
-  }
-  .card-title h6{
-      font-weight: 1.4em;
-      font-weight: 700;
-  }
-  .card-icons a{
-      font-size: 1.4em;
-      border-radius: 50%;
-  }
-   
- 
+.card {
+  background: #fff;
+  min-height: 300px;
+  max-height: 300px;
+  overflow: auto;
+  margin: 10px;
+  border-radius: 2px;
+  box-shadow: 0 5px 25px rgb(1 1 1 / 10%);
+  justify-content: space-between;
+}
+.card:hover {
+  background-color: #999999;
+  color: #ffffff;
+  border: 1px solid #ff0000;
+}
+.card-image {
+  max-height: 200px;
+  overflow: hidden;
+}
+.card-image img {
+  width: 100%;
+  max-height: 30%;
+}
+.card-title {
+  color: #222;
+  padding: 10px;
+}
+.card-title h6 {
+  font-weight: 1.4em;
+  font-weight: 700;
+}
+.card-icons a {
+  font-size: 1.4em;
+  border-radius: 50%;
+}
+.fifty {
+  width: 45%;
+  display: inline-block;
+}
+.one-third.column {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.equal {
+  display: flex;
+}
+.equal-height {
+  flex: 1;
+}
+.tab {
+  padding-left: 20px;
+}
+.lcw-center {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+.lcw-logo {
+  justify-content: center;
+  justify-items: center;
+}
+.lcw-text{
+  padding-top: 10px;
+  text-align: center;
+}
+.lcw-content{
+  justify-content: center;
+  justify-items: center;
+}
 
+.cryptoMain{
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/* .image-name{
+  justify-content: flex-start;
+  align-items: center;
+} */
+.crypto-info {
+  text-align: right;
+}
+.fifty-center {
+  flex: none;
+  margin: auto;
+  display: inline-block;
+  width: 60%;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+
+}
 
 @media only screen and (max-width: 1000px) {
-    #playerPicture {
-        display: none;
-    }
+  /* #playerPicture {
+    display: none;
+  } */
+  nav {
+    display: block;
+    top: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 1;
+  }
+  nav .three.columns {
+    width: 22%;
+  }
+  .newsResults {
+    justify-items: center;
+  }
+  .one-third.column {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .equal {
+    display: block;
+  }
+  .four.columns {
+    width: 48%;
+  }
+  .six.columns {
+    width: 100%;
+  }
+  .columns {
+    margin-left: 0px;
+  }
+  nav .three.columns {
+    width: 22%;
+  }
+  .margin-twenty {
+    margin-bottom: 20px;
+  }
+  .one-third.column {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+  }
 }
