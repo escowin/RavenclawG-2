@@ -146,6 +146,12 @@ h6 {
   width: 100px;
 }
 /* news widget */
+.loader {
+  border-top: 4px dashed blue;
+  border-right: 4px solid green;
+  border-bottom: 4px dashed red;
+  border-left: 4px solid pink;
+}
 .newsResults {
   justify-content: space-around;
   margin: auto;
@@ -156,11 +162,15 @@ h6 {
   background: #fff;
   min-height: 300px;
   max-height: 300px;
-  overflow: auto;
+  overflow: scroll;
   margin: 10px;
   border-radius: 2px;
   box-shadow: 0 5px 25px rgb(1 1 1 / 10%);
-  justify-content: space-between;
+  border-radius: 10%;
+}
+.article{
+  border-radius: 50%;
+  align-items: center;
 }
 .card:hover {
   background-color: #999999;
@@ -173,7 +183,7 @@ h6 {
 }
 .card-image img {
   width: 100%;
-  max-height: 30%;
+  max-height: 25%;
 }
 .card-title {
   color: #222;
