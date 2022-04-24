@@ -22,6 +22,7 @@ The settings tab runs checks to make sure the user has specified their name, dar
 * balldontlie (sports info)
 * gnews (news info)
 * live coin watch (crypto currency)
+* Alpha Vantage (stocks)
 
 ## Contributers
 Cheyne Etie (Chewbakkah)
@@ -36,9 +37,11 @@ https://github.com/thenickgarza
 Yohans Getaneh (Yohans G)
 https://github.com/yohans14
 
+Edwin Escobar (escowin)
+https://github.com/escowin
 
 Live Link:
-https://chewbakkah.github.io/RavenclawG-2/
+https://escowin.github.io/RavenclawG-2/
 ![ravenhome](https://user-images.githubusercontent.com/92648393/147470527-153fa094-3fc0-4291-91ef-3e600ebb8a7d.JPG)
 
 
