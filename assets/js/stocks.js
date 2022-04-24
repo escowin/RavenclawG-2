@@ -1,27 +1,23 @@
 // Alpha Vantage API
-// API Key 0FNPYTR1466MR51T
+// cost apiUrl = "https://www.alphavatage.co/query?function=";
+// const apiKey = "apiKey=0FNPYTR1466MR51T";
+// const intraDay = "function=TIME_SERIES_INTRADAY";
+// const 
 
-// TIME_SERIES_INTRADAY | 
+var getStocks = function() {
+    console.log("getStocks is doing something");
+  };
+  
 
-//  Finance API widget stuff
-
-// var axios = require("axios").default;
-
-
-
+  getStocks();
 
 
-// var options = {
-//   method: 'GET',
-//   url: 'https://yfapi.net/v11/finance/quoteSummary/AAPL',
-//   params: {modules: 'defaultKeyStatistics,assetProfile'},
-//   headers: {
-//     'x-api-key': 'RDFVnMFH1btOrenf8xIH8WPlt2dgqCk5i1hNIa68'
-//   }
-// };
+// Core Stock |  Intraday
 
-// axios.request(options).then(function (response) {
-// 	console.log(response.data);
-// }).catch(function (error) {
-// 	console.error(error);
-// });
+// https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=0FNPYTR1466MR51T
+
+
+// Foreign Exchange | Currency Exchange Rate
+
+// https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=JPY&apikey=demo
+// https://www.alphavantage.co/query?function=FX_INTRADAY&from_symbol=EUR&to_symbol=USD&interval=5min&apikey=demo
