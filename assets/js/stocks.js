@@ -11,26 +11,27 @@ var apiKey = "apiKey=0FNPYTR1466MR51T";
 // RETRIEVE API STOCK DATA
 var getStock = function (stock) {
     var endPoint = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=" + stock + "&interval=5min&" + apiKey;
-    fetch(endPoint).then(function (response) {
-        response.json().then(function (data) {
-            displayStock(data)
-        });
-    });
+    fetch(endPoint)
+    .then(response => response.json())
+    .then(data => {
+        stockNameEl.innerHTML = "Stock | " + data.data[0].symbol;
+        stockHighEl.innerHTML = "High | " + data.data[0].high;
+        weightEl.innerHTML = "Low | " + data.data[0].low;
+    })
 };
 
 // USER INPUT
-var stockSubmit = function (event) {
+var stockSubmitHandler = function (event) {
+    // HOMEPAGE REFRESH PREVENTION
     event.preventDefault();
     // elimnate white space from user input
-    var stockName = stockInputField.ariaValueMax.trim();
-    localStorage.setItem("stockSearch", stockName);
-    if (stockName) {
-        getStock(stockName);
+    var stockSearch = searchEl.value
+    if(stockSearch) {
+        searchEl.value = '';
+    } else {
+        alert('enter stock symbol');
     }
 };
-
-// EVENT SUBMISSION
-stockUpdateEl.addEventListener("click", stockSubmit);
 
 // DISPLAY STOCK DATA ON HOMEPAGE
 var displayStock = function (data) {
@@ -38,4 +39,8 @@ var displayStock = function (data) {
     stockMain.innerHTML.setItem("current-stock", data.stock[0].main);
     localStorage.setItem("current-stock")
 }
+
+// EVENT SUBMISSION
+buttonEl.addEventListener("click", stockSubmitHandler);
+
 getStock();
