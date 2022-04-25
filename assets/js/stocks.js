@@ -6,14 +6,14 @@ var stockHighEl = document.querySelector("#stock-high");
 var stockLowEl = document.querySelector("#stock-low");
 
 // STOCKS | Alpha Vantage API
-var urlBase = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=";
-var apiKey = "apiKey=0FNPYTR1466MR51T";
+const urlBase = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=";
+const apiKey = "apikey=0FNPYTR1466MR51T";
+const apiInterval = "&interval=5min&";
 
 // RETRIEVE API STOCK DATA
 var getStock = function(symbol) {
-    // var endPoint = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=" + stock + "&interval=5min&" + apiKey;
-    var apiUrl = fetch("https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=" + symbol + "&interval=5min&" + apiKey);
-    
+    var apiUrl = urlBase + symbol + apiInterval + apiKey;
+
     fetch(apiUrl).then(function(response) {
         response.json().then(function(data) {
             console.log(data);
@@ -53,4 +53,5 @@ var displayStock = function (data) {
 // EVENT SUBMISSION
 buttonEl.addEventListener("click", stockSubmitHandler);
 
+// CALL | BASED ON USER INPUT
 getStock("IBM");
