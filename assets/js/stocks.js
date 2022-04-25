@@ -2,22 +2,24 @@
 var stockFormEl = document.querySelector("#stock-form");
 var stockInputEl = document.querySelector("#symbol");
 var searchButtonEl = document.querySelector("#stock-search-btn");
-var stockNameEl = document.querySelector("#stock-name");
+var stockStatsContainerEl = document.querySelector("#stock-stats-container")
+var stockSymbolEl = document.querySelector("#stock-symbol");
 var stockHighEl = document.querySelector("#stock-high");
 var stockLowEl = document.querySelector("#stock-low");
 
 // STOCKS | Alpha Vantage API
-const urlBase = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=";
-const apiInterval = "&interval=5min&";
-const apiKey = "apikey=0FNPYTR1466MR51T";
+const urlBase = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=";
+const apiKey = "&apikey=0FNPYTR1466MR51T";
 
 // RETRIEVE API STOCK DATA
 var getStock = function(symbol) {
-    var apiUrl = urlBase + symbol + apiInterval + apiKey;
+    var apiUrl = urlBase + symbol + apiKey;
+    // var apiUrl = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=0FNPYTR1466MR51T";
     fetch(apiUrl).then(function(response) {
-        response.json().then(function(data) {
-            console.log(data);
-        });
+        displayStock(symbol);
+        // response.json().then(function(data) {
+            console.log(symbol);
+        // });
     });
 };
 
@@ -31,20 +33,11 @@ var stockSubmitHandler = function (event) {
     } else {
         alert("enter valid stock symbol");
     }
-    // var stockSearch = searchEl.value
-    // if(stockSearch) {
-    //     searchEl.value = '';
-    // } else {
-    //     alert('enter stock symbol');
-    // }
 };
 
 // DISPLAY STOCK DATA ON HOMEPAGE
-var displayStock = function (data) {
-    console.log(data);
-    stockSearched.innerHTML = data.name;
-    stockMain.innerHTML.setItem("current-stock", data.stock[0].main);
-    localStorage.setItem("current-stock")
+var displayStock = function(symbol, searchTerm) {
+    stockSymbolEl.textContent = searchTerm;
 }
 
 // EVENT SUBMISSION
