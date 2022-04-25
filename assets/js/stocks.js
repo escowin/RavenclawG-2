@@ -1,6 +1,6 @@
 // DOM ELEMENTS | FINANCE WIDGET - STOCKS
 var searchEl = document.querySelector("#search-stocks");
-var buttonEl = document.querySelector("#stock-search-btn");
+var searchButtonEl = document.querySelector("#stock-search-btn");
 var stockNameEl = document.querySelector("#stock-name");
 var stockHighEl = document.querySelector("#stock-high");
 var stockLowEl = document.querySelector("#stock-low");
@@ -13,7 +13,6 @@ const apiInterval = "&interval=5min&";
 // RETRIEVE API STOCK DATA
 var getStock = function(symbol) {
     var apiUrl = urlBase + symbol + apiInterval + apiKey;
-
     fetch(apiUrl).then(function(response) {
         response.json().then(function(data) {
             console.log(data);
@@ -21,17 +20,16 @@ var getStock = function(symbol) {
     });
 };
 
-// USER INPUT
+// USER INPUT | FUNCTION LINKED TO SEARCH BUTTON
 var stockSubmitHandler = function (event) {
-    // HOMEPAGE REFRESH PREVENTION
     event.preventDefault();
-    // elimnate white space from user input
-    var stockSearch = searchEl.value
-    if(stockSearch) {
-        searchEl.value = '';
-    } else {
-        alert('enter stock symbol');
-    }
+    console.log(event);
+    // var stockSearch = searchEl.value
+    // if(stockSearch) {
+    //     searchEl.value = '';
+    // } else {
+    //     alert('enter stock symbol');
+    // }
 };
 
 // DISPLAY STOCK DATA ON HOMEPAGE
@@ -43,7 +41,7 @@ var displayStock = function (data) {
 }
 
 // EVENT SUBMISSION
-buttonEl.addEventListener("click", stockSubmitHandler);
+searchButtonEl.addEventListener("submit", stockSubmitHandler);
 
 // CALL | BASED ON USER INPUT
 getStock("IBM");
