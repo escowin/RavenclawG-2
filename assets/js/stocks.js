@@ -19,14 +19,6 @@ var getStock = function(symbol) {
             console.log(data);
         });
     });
-
-    // fetch(endPoint)
-    // .then(response => response.json())
-    // .then(data => {
-    //     stockNameEl.innerHTML = "Stock | " + data.data[0].symbol;
-    //     stockHighEl.innerHTML = "High | " + data.data[0].high;
-    //     weightEl.innerHTML = "Low | " + data.data[0].low;
-    // })
 };
 
 // USER INPUT
