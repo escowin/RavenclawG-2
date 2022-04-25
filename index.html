@@ -200,10 +200,10 @@
           <!-- STOCKS -->
           <div class="stock-container">
             <div class="title">Search Stocks via Symbols</div>
-            <div class="searchBox">
-              <input type="text" name="stock" id="search-stocks" placeholder="Ex: TSLA" />
+            <form class="searchBox" id="stock-form">
+              <input type="text" name="symbol" id="symbol" placeholder="Ex: TSLA" />
               <button type="submit" id="stock-search-btn" class="button-primary">Search</button>
-            </div>
+            </form>
             <div class="container">
               <p id="stock-name"></p>
               <p id="stock-high"></p>
